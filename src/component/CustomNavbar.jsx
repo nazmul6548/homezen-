@@ -8,7 +8,7 @@ const CustomNavbar = () => {
 const {user,loader,logout} =useContext(AuthContext)
 console.log(user);
     const navOption = <>
-    <Navbar.Link href="#" active>
+    <Navbar.Link href="/">
             Home
           </Navbar.Link>
           <Navbar.Link href="#">About</Navbar.Link>
@@ -17,6 +17,7 @@ console.log(user);
           <Navbar.Link href="#">Contact</Navbar.Link>
           <Navbar.Link href="/login">LogIn</Navbar.Link>
           <Navbar.Link href="/register">Register</Navbar.Link>
+          <Navbar.Link href="/allproperties">All Properties</Navbar.Link>
     </>
     return loader ? (
         <div className="flex items-center justify-center w-full h-[100vh] text-gray-100 ">

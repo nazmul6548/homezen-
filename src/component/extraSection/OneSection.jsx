@@ -3,7 +3,7 @@
 const OneSection = () => {
     return (
         <div>
-            <div className="font-sans bg-white text-[#333] py-12 px-4 bg-gradient-to-r from-white via-[#E4FE66] to-[#55F5A3]">
+            <div className="font-sans bg-white text-[#ffff] py-12 px-4 bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900">
   <div className="max-w-7xl max-md:max-w-md mx-auto max-md:text-center">
     <h2 className="lg:text-6xl md:text-5xl text-3xl font-extrabold lg:!leading-[64px] md:max-w-4xl">The Most Modern Card Platform for Debit</h2>
     <div className="grid md:grid-cols-2 gap-12 mt-8">
@@ -21,7 +21,7 @@ const OneSection = () => {
         </div>
       </div>
       <div>
-        <img src="https://readymadeui.com/readymadeui_banner.webp" className="shrink-0 w-full h-full rounded-md object-contain" alt="Readymade UI Banner" />
+        <img src="https://i.ibb.co/0KYmvWg/pexels-ibidsy-5524205.jpg" className="shrink-0 w-full h-full rounded-md object-contain" alt="Readymade UI Banner" />
       </div>
     </div>
   </div>

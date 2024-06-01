@@ -6,7 +6,7 @@ const Footer = () => {
            <footer className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 py-10 px-10 font-sans tracking-wide">
       <div className="max-w-2xl mx-auto text-center">
         <a href="javascript:void(0)" className="inline-block">
-          <img src="https://readymadeui.com/readymadeui-light.svg" alt="logo" className="w-48" />
+          <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" alt="logo" className="w-48" />
         </a>
         <p className="text-sm mt-8 text-gray-200">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida, mi eu pulvinar cursus, sem elit interdum mauris.
