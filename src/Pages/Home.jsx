@@ -1,3 +1,4 @@
+import LatestReviews from "../component/LatestReviews";
 import Slide from "../component/Slide";
 import OneSection from "../component/extraSection/OneSection";
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
           
             <Slide></Slide>
+            <LatestReviews></LatestReviews>
             <OneSection></OneSection>
         </div>
     );

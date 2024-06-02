@@ -1,0 +1,71 @@
+import { useContext } from "react";
+import Form from "../../../component/Form";
+import { AuthContext } from "../../../component/AuthProvider";
+import { imageUpload } from "../../../api/utils";
+import { useMutation } from "@tanstack/react-query";
+import useAxiosSecure from "../../../hook/useAxiosSecure";
+
+
+const AddPropertys = () => {
+    const axiosSecure =useAxiosSecure()
+const {user} =useContext(AuthContext)
+
+const {mutateAsync} = useMutation({
+    mutationFn:async result=>{
+        const {data} = await axiosSecure.post("/house",result)
+        return data
+    },
+    onSuccess:()=>{
+        console.log("data sucessfully added");
+    }
+})
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const property_title=form.property_title.value;
+        const location=form.location.value;
+        const price_range = form.price_range.value;
+        const image = form.image.files[0];
+        const agent= {
+            name:user?.displayName,
+            image:user?.photoURL,
+            email:user?.email
+        }
+        try{
+            const image_url = await imageUpload(image)
+            const result ={property_title,location,price_range,image:image_url,agent}
+            // console.log(result);
+            await mutateAsync(result)
+        }catch (error) {
+            console.log(error);
+        }
+        const image_url = await imageUpload(image)
+        console.log(image_url);
+        
+        // console.log(result);
+    }
+    return (
+        <div>
+            
+            <div>
+            <div
+  className="grid lg:grid-cols-3 items-center max-lg:justify-center h-full py-6 px-16 max-sm:px-4 bg-green-100 font-[sans-serif]"
+>
+  <div className="max-w-lg max-lg:mx-auto max-lg:text-center max-lg:mb-6">
+    <h2 className="text-4xl font-extrabold text-[#333]">Get In Touch</h2>
+    <p className="text-sm text-[#333] mt-4">
+      Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage with you.
+    </p>
+   <Form handleSubmit={handleSubmit}></Form>
+  </div>
+  <div className="z-10 relative lg:col-span-2">
+    <img src="https://readymadeui.com/contact.webp" className="w-full" />
+  </div>
+</div>
+            </div>
+        </div>
+    );
+};
+
+export default AddPropertys;

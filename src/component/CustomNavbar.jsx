@@ -11,10 +11,10 @@ console.log(user);
     <Navbar.Link href="/">
             Home
           </Navbar.Link>
-          <Navbar.Link href="#">About</Navbar.Link>
-          <Navbar.Link href="#">Servicesssss</Navbar.Link>
-          <Navbar.Link href="#">Pricing</Navbar.Link>
-          <Navbar.Link href="#">Contact</Navbar.Link>
+          {/* <Navbar.Link href="#">About</Navbar.Link> */}
+          {/* <Navbar.Link href="#">Servicesssss</Navbar.Link> */}
+          {/* <Navbar.Link href="#">Pricing</Navbar.Link> */}
+          <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
           <Navbar.Link href="/login">LogIn</Navbar.Link>
           <Navbar.Link href="/register">Register</Navbar.Link>
           <Navbar.Link href="/allproperties">All Properties</Navbar.Link>

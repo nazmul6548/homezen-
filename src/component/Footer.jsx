@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
            <footer className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 py-10 px-10 font-sans tracking-wide">
       <div className="max-w-2xl mx-auto text-center">
-        <a href="javascript:void(0)" className="inline-block">
+        <a  className="inline-block">
           <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" alt="logo" className="w-48" />
         </a>
         <p className="text-sm mt-8 text-gray-200">

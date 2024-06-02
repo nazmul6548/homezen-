@@ -24,7 +24,7 @@ const Slide = () => {
          
         >
           <SwiperSlide>
-            <div className="slide slide1 flex flex-col fixed min-h-screen">
+            <div className="slide slide1 flex flex-col fixed min-h-full">
               <div>
                 <h1 className="text-3xl md:text-6xl font-bold w-3/4 m-auto font-lato text-center text-white animate__animated animate__fadeInDownBig whitespace-nowrap">
                 Vegetable Fruits

@@ -7,6 +7,11 @@ import LogIn from "../SigninSignup/LogIn";
 import Register from "../SigninSignup/Register";
 import ErrorPage from "../component/ErrorPage";
 import AllProperties from "../Pages/AllProperties";
+import AllPropertyDetails from "../Pages/AllPropertyDetails";
+import DashboardLayout from "../Dashboard/DashboardLayout";
+import Statistic from "../Pages/dashboard/common/Statistic";
+import AddPropertys from "../Pages/dashboard/Agent/AddPropertys";
+import MyAddedPro from "../Pages/dashboard/Agent/MyAddedPro";
 
 
 export const router = createBrowserRouter([
@@ -31,7 +36,30 @@ export const router = createBrowserRouter([
             path:"/allproperties",
             element:<AllProperties></AllProperties>
 
-        }
+        },
+        {
+            path:"/house/:id",
+            element:<AllPropertyDetails></AllPropertyDetails>
+        },
+       
       ]
     },
+    {
+        path:"/dashboard",
+        element:<DashboardLayout></DashboardLayout>,
+        children:[
+            {
+                index:true,
+                element:<Statistic></Statistic>
+            },
+            {
+                path:'addproperty',
+                element:<AddPropertys></AddPropertys>
+            },
+            {
+                path:'myaddedpro',
+                element:<MyAddedPro></MyAddedPro>
+            },
+        ]
+    }
   ]);
