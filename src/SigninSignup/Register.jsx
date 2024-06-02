@@ -41,8 +41,13 @@ const name = form.name.value;
         createUser(email,password)
         .then(() => {
             userUpdateProfile(name,image)
+            
             // navigate(div)
             .then(()=>{
+                setTimeout(() => {
+                    window.location.reload();
+    
+                },1000)
                 const userInfo = {
                     name: name,
                     email :email

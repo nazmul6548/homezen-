@@ -23,9 +23,20 @@ const AllPropertyDetails = () => {
     // console.log(house);
     
   return <div>
-    <h1 className="pt-12">{house.length}</h1>
-    <h2>this is details page{house.image}</h2>
-    <h2>this is details page{house.property_title}</h2>
+    <section>
+	<div className="bg-green-100">
+		<div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50">
+			<h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">{house.property_title}</h1>
+			<p className="mt-6 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">{house.description}</p>
+            <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price : ${house.price_range} </p>
+			<div className="flex flex-wrap justify-center">
+				<button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
+				<button type="button" className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-300 dark:text-gray-50">Review</button>
+			</div>
+		</div>
+	</div>
+	<img src={house.image} alt="" className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40" />
+</section>
   </div>;
 };
 

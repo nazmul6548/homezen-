@@ -1,13 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Form from "../../../component/Form";
 import { AuthContext } from "../../../component/AuthProvider";
 import { imageUpload } from "../../../api/utils";
 import { useMutation } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const AddPropertys = () => {
     const axiosSecure =useAxiosSecure()
+    const navigate=useNavigate()
+    const [loading,setloading] = useState(false)
 const {user} =useContext(AuthContext)
 
 const {mutateAsync} = useMutation({
@@ -16,16 +20,21 @@ const {mutateAsync} = useMutation({
         return data
     },
     onSuccess:()=>{
-        console.log("data sucessfully added");
+       console.log("adde success");
+       Swal.fire("added Successfully!");
+          navigate("/dashboard/myaddedpro")
+        setloading(false)
     }
 })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setloading(true)
         const form = e.target;
         const property_title=form.property_title.value;
         const location=form.location.value;
         const price_range = form.price_range.value;
+        const description = form.description.value;
         const image = form.image.files[0];
         const agent= {
             name:user?.displayName,
@@ -34,11 +43,18 @@ const {mutateAsync} = useMutation({
         }
         try{
             const image_url = await imageUpload(image)
-            const result ={property_title,location,price_range,image:image_url,agent}
+            const result ={property_title,location,price_range,image:image_url,agent,description}
             // console.log(result);
             await mutateAsync(result)
         }catch (error) {
             console.log(error);
+            // Swal.fire({
+            //     icon: "error",
+            //     title: "Oops...",
+            //     text: "Something went wrong!",
+            //     footer: '<a href="#">Why do I have this issue?</a>'
+            //   });
+            setloading(false)
         }
         const image_url = await imageUpload(image)
         console.log(image_url);
@@ -57,7 +73,7 @@ const {mutateAsync} = useMutation({
     <p className="text-sm text-[#333] mt-4">
       Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage with you.
     </p>
-   <Form handleSubmit={handleSubmit}></Form>
+   <Form handleSubmit={handleSubmit} loading={loading}></Form>
   </div>
   <div className="z-10 relative lg:col-span-2">
     <img src="https://readymadeui.com/contact.webp" className="w-full" />
