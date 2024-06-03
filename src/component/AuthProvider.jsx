@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 // import { GoogleAuthProvider } from "firebase/auth/web-extension";
 import useAxiosPublic from "../axios/useAxiosPublic";
+import axios from "axios";
+import { getToken } from "firebase/app-check";
 // import { GoogleAuthProvider } from "firebase/auth/web-extension";
 
 export const AuthContext = createContext(null)
@@ -31,7 +33,27 @@ const AuthProvider = ({children}) => {
             displayName: name, photoURL: image
           })
     }
-   
+//    get token from server
+  
+  const getToken = async email => {
+    const { data } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/jwt`,
+      { email },
+      { withCredentials: true }
+    )
+    return data
+  }
+// save user
+const saveUser = async user => {
+    const currentUser = {
+        email:user?.email,
+        role:"guest",
+        status:"verified",
+    }
+    const {data} = await axios.put(`${import.meta.env.VITE_API_URL}/user`,currentUser)
+    return data
+}
+
 
     const login = (email, password) => {
         setLoader(true)
@@ -54,20 +76,10 @@ const AuthProvider = ({children}) => {
             // if (user) {
                 getAuth()
             setUser(user)
-            // if (user) {
-            //     // 
-            //     const userInfo={email:user.email};
-            //     axiosPublic.post("/jwt",userInfo)
-            //     .then(res => {
-            //         if(res.data.token){
-            //             localStorage.setItem("access_token",res.data.token);
-            //             setLoader(false)
-            //         }
-            //     })
-            // }else{
-            //     // 
-            //     localStorage.removeItem("access_token");
-            // }
+            if (user) {
+                getToken(user.email)
+                saveUser(user)
+            }
             // console.log(user);
             setLoader(false)
              

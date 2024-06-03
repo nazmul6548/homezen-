@@ -1,12 +1,47 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-
+import HostModal from "./HostModal";
+import { ToastContainer, toast } from "react-toastify";
+import useAxiosSecure from "../hook/useAxiosSecure";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const CustomNavbar = () => {
+  const axiosSecure = useAxiosSecure()
 const {user,loader,logout} =useContext(AuthContext)
-console.log(user);
+// console.log(user);
+// for modal
+const [isModalOpen,setIsModalOpen] = useState(false)
+const closeModal=() => {
+setIsModalOpen(false)
+}
+const modalHandler = async  () => {
+  console.log("i want");
+  
+  try {
+    const currentUser = {
+      email: user?.email,
+      role: 'guest',
+      status: 'Requested',
+    }
+    const { data } = await axiosSecure.put(`/user`, currentUser)
+    console.log(data)
+    if (data.modifiedCount > 0) {
+      toast.success('Success! wait for admin confirmation')
+    } else {
+      toast.success('Please!, Wait Admin confirmation')
+    }
+    closeModal();
+  }catch (err) {
+    console.log(err)
+    toast.error(err.message)
+  } finally {
+    closeModal()
+  }
+}
+
+
     const navOption = <>
     <Navbar.Link href="/">
             Home
@@ -44,9 +79,17 @@ console.log(user);
         <Navbar fluid rounded className="fixed z-20 opacity-70 w-full bg-white ">
         <Navbar.Brand >
           <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
+          {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span> */}
         </Navbar.Brand>
-        <div className="flex md:order-2">
+        <div className="flex md:order-2 justify-around">
+        {/*  */}
+        {/*  */}
+        {/* <div className='hidden md:block'>
+
+</div> */}
+<HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal>
+         {/*  */}
+        {/*  */}
         {/*  */}
         {
             user &&   <Dropdown
@@ -60,9 +103,19 @@ console.log(user);
               <span className="block text-sm">{user?.displayName}</span>
               <span className="block truncate text-sm font-medium">{user?.email}</span>
             </Dropdown.Header>
-            <Dropdown.Item>Dashboard</Dropdown.Item>
-            <Dropdown.Item>Settings</Dropdown.Item>
-            <Dropdown.Item>Earnings</Dropdown.Item>
+            {/* <Dropdown.Item>Dashboard</Dropdown.Item> */}
+            {/*  */}
+           <div>
+             <button
+  // disabled={!user}
+  onClick={() => setIsModalOpen(true)}
+  className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+>
+  Host your home
+</button>
+</div>
+            {/*  */}
+            
             <Dropdown.Divider />
             <Dropdown.Item><button onClick={logout} className="bg-black text-white px-6 py-2 rounded-sm">LogOut</button></Dropdown.Item>
           </Dropdown>
@@ -79,6 +132,7 @@ console.log(user);
           <Navbar.Link href="#">Contact</Navbar.Link> */}
           {navOption}
         </Navbar.Collapse>
+        <ToastContainer />
       </Navbar>
     );
 };

@@ -12,6 +12,8 @@ import DashboardLayout from "../Dashboard/DashboardLayout";
 import Statistic from "../Pages/dashboard/common/Statistic";
 import AddPropertys from "../Pages/dashboard/Agent/AddPropertys";
 import MyAddedPro from "../Pages/dashboard/Agent/MyAddedPro";
+import MyProfile from "../Pages/dashboard/Agent/MyProfile";
+import ManageUsers from "../Pages/admin/ManageUsers";
 
 
 export const router = createBrowserRouter([
@@ -60,6 +62,14 @@ export const router = createBrowserRouter([
                 path:'myaddedpro',
                 element:<MyAddedPro></MyAddedPro>
             },
+            {
+                path:'myprofile',
+                element:<MyProfile></MyProfile>
+            },
+            {
+                path:"manageusers",
+                element:<ManageUsers></ManageUsers>
+            }
         ]
     }
   ]);
