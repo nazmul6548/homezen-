@@ -10,8 +10,8 @@ const OneSection = () => {
       <div>
         <p className="text-base leading-relaxed">Explore a curated collection of ready-to-use components and design blocks, empowering you to create stunning, responsive interfaces with ease. Streamline your workflow and discover the future of web development.</p>
         <div className="mt-12">
-          <button type="button" className="bg-[#55F5A3] hover:bg-green-400 transition-all text-[#333] font-bold text-sm rounded-full px-5 py-3">Getting Started</button>
-          <a href="javascript:void(0)" className="text-sm font-bold underline sm:ml-6 max-sm:mt-4 max-sm:block whitespace-nowrap">API Documentation</a>
+          <button type="button" className="bg-[#a8181f] hover:bg-green-400 transition-all text-[#ffff] font-bold text-sm rounded-full px-5 py-3">Getting Started</button>
+          <a  className="text-sm font-bold underline sm:ml-6 max-sm:mt-4 max-sm:block whitespace-nowrap">API Documentation</a>
         </div>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
           <img src="https://readymadeui.com/google-logo.svg" className="w-28 mx-auto" alt="google-logo" />

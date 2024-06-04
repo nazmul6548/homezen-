@@ -20,7 +20,7 @@ const AllProperties = () => {
     <div className="min-h-screen pt-16">
       {houses && houses.length > 0 ? (
         <div>
-          <div className="bg-[#e7dfd9] px-4 py-10 font-[sans-serif]">
+          <div className="bg-green-100 px-4 py-10 font-[sans-serif]">
             <div className="max-w-6xl mx-auto">
               <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-[#333]">

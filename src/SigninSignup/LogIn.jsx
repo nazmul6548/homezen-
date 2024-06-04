@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../component/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import SocialLogIn from "../component/SocialLogIn";
 
@@ -104,7 +104,7 @@ const LogIn = () => {
               </label>
             </div>
             <div>
-              <a href="javascript:void(0);" className="text-sm font-semibold hover:underline">
+              <a className="text-sm font-semibold hover:underline">
                 Forgot Password?
               </a>
             </div>
@@ -112,8 +112,8 @@ const LogIn = () => {
           {errorMessage && <p className="text-red-500 mb-4">{"you provide right email and password"}</p>} 
           <div className="mt-10">
             <input type="submit" value="LogIn" className="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-[#333] hover:bg-[#222] focus:outline-none" />
-            <p className="text-sm text-center mt-6">Don't have an account <a href="javascript:void(0);"
-              className="font-semibold hover:underline ml-1 whitespace-nowrap">Register here</a></p>
+            <p className="text-sm text-center mt-6">Don't have an account <Link to="/register" 
+              className="font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
           </div>
           <hr className="my-6 border-gray-500" />
           <div className="space-x-8 flex justify-center">

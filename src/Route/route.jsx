@@ -14,6 +14,9 @@ import AddPropertys from "../Pages/dashboard/Agent/AddPropertys";
 import MyAddedPro from "../Pages/dashboard/Agent/MyAddedPro";
 import MyProfile from "../Pages/dashboard/Agent/MyProfile";
 import ManageUsers from "../Pages/admin/ManageUsers";
+import ManageReview from "../Pages/admin/ManageReview";
+import ManagePropertys from "../Pages/admin/ManagePropertys";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -36,7 +39,7 @@ export const router = createBrowserRouter([
         },
         {
             path:"/allproperties",
-            element:<AllProperties></AllProperties>
+            element:<PrivateRoute><AllProperties></AllProperties></PrivateRoute>
 
         },
         {
@@ -48,7 +51,7 @@ export const router = createBrowserRouter([
     },
     {
         path:"/dashboard",
-        element:<DashboardLayout></DashboardLayout>,
+        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children:[
             {
                 index:true,
@@ -69,7 +72,15 @@ export const router = createBrowserRouter([
             {
                 path:"manageusers",
                 element:<ManageUsers></ManageUsers>
-            }
+            },
+            {
+                path:"managereview",
+                element:<ManageReview></ManageReview>
+            },
+            {
+                path:"managepropertys",
+                element:<ManagePropertys></ManagePropertys>
+            },
         ]
     }
   ]);

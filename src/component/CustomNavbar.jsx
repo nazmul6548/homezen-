@@ -5,6 +5,7 @@ import HostModal from "./HostModal";
 import { ToastContainer, toast } from "react-toastify";
 import useAxiosSecure from "../hook/useAxiosSecure";
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 
 const CustomNavbar = () => {
@@ -46,12 +47,9 @@ const modalHandler = async  () => {
     <Navbar.Link href="/">
             Home
           </Navbar.Link>
-          {/* <Navbar.Link href="#">About</Navbar.Link> */}
-          {/* <Navbar.Link href="#">Servicesssss</Navbar.Link> */}
-          {/* <Navbar.Link href="#">Pricing</Navbar.Link> */}
+         
           <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
-          <Navbar.Link href="/login">LogIn</Navbar.Link>
-          <Navbar.Link href="/register">Register</Navbar.Link>
+          
           <Navbar.Link href="/allproperties">All Properties</Navbar.Link>
     </>
     return loader ? (
@@ -116,9 +114,13 @@ const modalHandler = async  () => {
 </div>
             {/*  */}
             
+            
             <Dropdown.Divider />
             <Dropdown.Item><button onClick={logout} className="bg-black text-white px-6 py-2 rounded-sm">LogOut</button></Dropdown.Item>
           </Dropdown>
+        }
+        {
+          !user && <Link to="/login"><button  className=" mr-1 px-4 py-2 bg-[#a8181f] rounded-xl text-white font-bold">LogIn</button></Link>
         }
           <Navbar.Toggle />
         </div>

@@ -15,7 +15,7 @@ const AllPropertycard = ({house}) => {
               <p className="text-[#333] text-sm"></p>
               {/* <Link  type="button" className="px-6 py-3 text-white text-sm tracking-wider border-none outline-none bg-[#b69b88] hover:bg-[#af876a] mt-6">Read more</Link> */}
               <Link to={`/house/${_id}`}>
-          <button  type="button" className="px-6 py-3 text-white text-sm tracking-wider border-none outline-none bg-[#b69b88] hover:bg-[#af876a] mt-6">
+          <button  type="button" className="px-6 py-3 text-white text-sm tracking-wider border-none outline-none bg-green-400 hover:bg-[#af876a] mt-6">
             View Details
           </button>
         </Link>
