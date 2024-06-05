@@ -39,7 +39,8 @@ const AllPropertyDetails = () => {
     const reviewerName=user?.displayName;
     const reviewerImage=user?.photoURL;
     const reviewerEmail=user?.email;
-    const Property_title=house.property_title;
+    const Property_title=house?.property_title;
+    const agentName = house?.agent?.name;
     const reviewTime=new Date()
     // const result = {reviewTime,description,reviewerName,reviewerImage,reviewerEmail,Property_title}
 
@@ -48,7 +49,7 @@ const AllPropertyDetails = () => {
 
     try{
       
-      const result = {reviewTime,description,reviewerName,reviewerImage,reviewerEmail,Property_title}
+      const result = {reviewTime,agentName,description,reviewerName,reviewerImage,reviewerEmail,Property_title}
       // console.log(result);
       await mutateAsync(result)
       form.reset();

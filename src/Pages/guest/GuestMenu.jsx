@@ -1,11 +1,13 @@
 
+import MenuItem from "../../component/sidebar/MenuItem";
+import { MdOutlineRateReview } from "react-icons/md";
 
-import React from 'react';
+
 
 const GuestMenu = () => {
     return (
         <div>
-            
+             <MenuItem icon={MdOutlineRateReview} label='My Reviews' address='myreviews' />
         </div>
     );
 };

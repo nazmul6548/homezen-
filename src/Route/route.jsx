@@ -17,6 +17,7 @@ import ManageUsers from "../Pages/admin/ManageUsers";
 import ManageReview from "../Pages/admin/ManageReview";
 import ManagePropertys from "../Pages/admin/ManagePropertys";
 import PrivateRoute from "./PrivateRoute";
+import MyReviews from "../Pages/guest/MyReviews";
 
 
 export const router = createBrowserRouter([
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
         },
         {
             path:"/house/:id",
-            element:<AllPropertyDetails></AllPropertyDetails>
+            element:<PrivateRoute><AllPropertyDetails></AllPropertyDetails></PrivateRoute>
         },
        
       ]
@@ -80,6 +81,10 @@ export const router = createBrowserRouter([
             {
                 path:"managepropertys",
                 element:<ManagePropertys></ManagePropertys>
+            },
+            {
+                path:"myreviews",
+                element:<MyReviews></MyReviews>
             },
         ]
     }
