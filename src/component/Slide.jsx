@@ -28,9 +28,9 @@ const Slide = () => {
            {/*  */}
            <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">Try using our templates</h2>
+    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">MINIMALIST DESIGN</h2>
     <div className="mt-12">
-      <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+      <p className="text-base">We’re surrounded by information design every day. From train station maps to infographics, exhibitions to tutorials — it’s all around us. Yet, most of the time.</p>
     </div>
     <div className="flex max-sm:flex-col justify-center sm:gap-8 gap-4 mt-12">
       <button type="button"
@@ -53,9 +53,9 @@ const Slide = () => {
             {/*  */}
             <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">Try using our templates</h2>
+    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">HOLLYWOOD GLAM DESIGN</h2>
     <div className="mt-12">
-      <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+      <p className="text-base">We’re surrounded by information design every day. From train station maps to infographics, exhibitions to tutorials — it’s all around us. Yet, most of the time.</p>
     </div>
     <div className="flex max-sm:flex-col justify-center sm:gap-8 gap-4 mt-12">
       <button type="button"
@@ -78,9 +78,9 @@ const Slide = () => {
               {/*  */}
               <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">Try using our templates</h2>
+    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">HOLLYWOOD GLAM DESIGN</h2>
     <div className="mt-12">
-      <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+      <p className="text-base">We’re surrounded by information design every day. From train station maps to infographics, exhibitions to tutorials — it’s all around us. Yet, most of the time.</p>
     </div>
     <div className="flex max-sm:flex-col justify-center sm:gap-8 gap-4 mt-12">
       <button type="button"
@@ -103,9 +103,9 @@ const Slide = () => {
               {/*  */}
               <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">Try using our templates</h2>
+    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">TRANSITIONAL DESIGN</h2>
     <div className="mt-12">
-      <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+      <p className="text-base">We’re surrounded by information design every day. From train station maps to infographics, exhibitions to tutorials — it’s all around us. Yet, most of the time.</p>
     </div>
     <div className="flex max-sm:flex-col justify-center sm:gap-8 gap-4 mt-12">
       <button type="button"
@@ -126,9 +126,9 @@ const Slide = () => {
              {/*  */}
              <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">Try using our templates</h2>
+    <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">MINIMALIST DESIGN</h2>
     <div className="mt-12">
-      <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+      <p className="text-base">We’re surrounded by information design every day. From train station maps to infographics, exhibitions to tutorials — it’s all around us. Yet, most of the time.</p>
     </div>
     <div className="flex max-sm:flex-col justify-center sm:gap-8 gap-4 mt-12">
       <button type="button"

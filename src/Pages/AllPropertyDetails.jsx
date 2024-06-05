@@ -26,8 +26,10 @@ const AllPropertyDetails = () => {
     },
     onSuccess:()=>{
        console.log("adde success");
+       
        Swal.fire("added Successfully!");
           // navigate("/house/:id")
+          refetch()
         setloading(false)
     }
 })
@@ -80,7 +82,7 @@ function onCloseModal() {
 // review sectio closed
     const {id} =useParams()
   const axiosCommon = useAxiosCommon();
-  const { data: house = {}, isLoading,error } = useQuery({
+  const { data: house = {}, isLoading,error,refetch } = useQuery({
     queryKey: ["house",id],
     queryFn: async () => {
       const { data } = await axiosCommon.get(`/house/${id}`);
@@ -176,7 +178,7 @@ function onCloseModal() {
 
 {/*  */}
 {/*  */}
-<CommentSec house={house}></CommentSec>
+<CommentSec house={house} refetchReviews={refetch}></CommentSec>
   </div>;
 
 };

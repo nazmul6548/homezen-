@@ -20,6 +20,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyReviews from "../Pages/guest/MyReviews";
 import MyWishList from "../Pages/guest/MyWishList";
 import PropertyBought from "../Pages/guest/PropertyBought";
+import OfferdPage from "../Pages/guest/OfferdPage";
 
 
 export const router = createBrowserRouter([
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
                 path:"bought",
                 element:<PropertyBought></PropertyBought>
             },
+            {
+                path:"offerd",
+                element:<OfferdPage></OfferdPage>
+            }
         ]
     }
   ]);

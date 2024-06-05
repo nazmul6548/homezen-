@@ -64,7 +64,7 @@ console.log(user);
     // 
     return (
 
-<div className="grid grid-cols-1 md:grid-cols-2">
+<div className="grid grid-cols-1 md:grid-cols-2 bg-green-100">
 {review.length > 0 ? (
   review.map(review => (
     <div key={review._id} className="review">

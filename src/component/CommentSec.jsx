@@ -5,10 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../hook/useAxiosSecure";
 
 
-const CommentSec = ({house}) => {
+const CommentSec = ({house,refetchReviews}) => {
     const {property_title} =house
     const axiosSecure = useAxiosSecure()
-    const {data:reviews=[],isLoading,refetch}=useQuery({
+    const {data:reviews=[],isLoading}=useQuery({
         queryKey:["reviews"],
         queryFn:async()=>{
             const response = await axiosSecure.get("/reviews");
