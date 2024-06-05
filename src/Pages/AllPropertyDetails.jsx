@@ -96,7 +96,31 @@ function onCloseModal() {
         return <p>Error loading data: {error.message}</p>;  // Display an error message
       }
     // console.log(house);
+    const addWishlist=async(e) => {
+      // e.preventDefault();
+      const productlist = e;
+      const buyername=user.displayName;
+      const buyeremail=user.email;
+      const date=new Date()
+     
     
+      const res={productlist, buyername, buyeremail,date,}
+      const menuRes = await axiosSecure.post('/wishlist',res);
+        console.log(menuRes.data)
+        if(menuRes.data.insertedId){
+            
+            // reset();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: ' is added to the menu.',
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
+    
+      console.log(res);
+    }
   return <div>
     <section>
 	<div className="bg-green-100">
@@ -105,13 +129,13 @@ function onCloseModal() {
 			<p className="mt-6 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">{house.description}</p>
             <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price : ${house.price_range} </p>
 			<div className="flex flex-wrap justify-center">
-				<button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
+				<button onClick={()=>addWishlist(house)} type="button" className="px-8 py-3 border m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
 				
 				
 				{/*  */}
 				{/*  */}
 				{/*  */}
-        <button className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-300 dark:text-gray-50" onClick={() => setOpenModal(true)}>Add Review</button>
+        <button className="px-8 py-3 m-2 text-lg font-semibold border rounded dark:border-gray-300 dark:text-gray-50" onClick={() => setOpenModal(true)}>Add Review</button>
       <Modal show={openModal} size="md" onClose={onCloseModal} popup>
         <Modal.Header />
         <Modal.Body>
