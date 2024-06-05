@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hook/useAxiosSecure";
 import { AuthContext } from "../../component/AuthProvider";
 import { useContext } from "react";
+import Swal from "sweetalert2";
 
 
 const MyReviews = () => {
@@ -24,11 +25,45 @@ console.log(user);
       return <p>loading....</p>;
     }
     // 
+
+    const handleDelte = (data) => {
+        // console.log(data);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if(result.isConfirmed){
+                axiosSecure.delete(`/review/${data}`)
+                .then(res => {
+                    if(res.data.deletedCount > 0){
+                        refetch()
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                          });
+                    }
+                }).catch(error => {
+                    console.error("Error deleting user:", error);
+                    Swal.fire({
+                        title: "Error!",
+                        text: "There was a problem deleting the user.",
+                        icon: "error"
+                    });
+                });
+            }
+        })
+    
+    };
+
     // 
     return (
-//         <div>
-//            
-//         </div>
+
 <div className="grid grid-cols-1 md:grid-cols-2">
 {review.length > 0 ? (
   review.map(review => (
@@ -42,7 +77,7 @@ console.log(user);
 
          <h4 className="text-base font-extrabold mt-8">{review.agentName}</h4>
      </div>
-     <button type="button"
+     <button onClick={()=>handleDelte(review._id)} type="button"
         className="px-5 mt-2 py-2.5 w-full rounded-lg text-sm tracking-wider font-medium border border-purple-700 outline-none bg-transparent hover:bg-purple-700 text-purple-700 hover:text-white transition-all duration-300">Delete</button>
  </div>
  
