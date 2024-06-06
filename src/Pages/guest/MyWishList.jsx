@@ -4,6 +4,7 @@ import useAxiosSecure from "../../hook/useAxiosSecure";
 import { AuthContext } from "../../component/AuthProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyWishList = () => {
   const { user } = useContext(AuthContext);
@@ -32,7 +33,40 @@ const MyWishList = () => {
   if (error) {
     return <p>Error loading wishlist: {error.message}</p>;
   }
+  const handleDelete = (data) => {
+    // console.log(data);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if(result.isConfirmed){
+            axiosSecure.delete(`/wishlist/${data}`)
+            .then(res => {
+                if(res.data.deletedCount > 0){
+                    refetch()
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                }
+            }).catch(error => {
+                console.error("Error deleting user:", error);
+                Swal.fire({
+                    title: "Error!",
+                    text: "There was a problem deleting the user.",
+                    icon: "error"
+                });
+            });
+        }
+    })
 
+};
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100 p-4">
       {
@@ -72,7 +106,7 @@ const MyWishList = () => {
           </div>
           <div className="flex justify-between mt-3">
          <Link to="/dashboard/offerd"> <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Make Offer</button></Link>
-          <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Remove</button>
+          <button onClick={()=>handleDelete(wish._id)} className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Remove</button>
           </div>
         </div>
       </div>
