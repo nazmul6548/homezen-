@@ -62,7 +62,7 @@ const handleDelete = (data) => {
 
 
     return (
-        <div>
+        <div className="">
            <div className="bg-green-100 font-[sans-serif] p-4">
   <div className="max-w-6xl max-md:max-w-lg mx-auto">
     <div>
@@ -79,16 +79,16 @@ const handleDelete = (data) => {
               className="lg:w-2/5 min-h-[250px] h-full object-cover"
             />
             <div className="p-6 lg:w-3/5">
-              <h3 className="text-xl font-bold text-[#333]">{house.title}</h3>
+              <h3 className="text-xl font-bold text-[#333]">{house.property_title}</h3>
               <span className="text-sm block text-gray-400 mt-2">{house.location}</span>
-              <span className="text-sm block text-gray-400 mt-2">Price :${house.price_range}</span>
+              <span className="text-sm block text-gray-400 mt-2">Price :${house.price_range.max}||{house.price_range.min}</span>
               <p className="text-sm mt-4">
                 {house.description}
               </p>
              <div className="flex justify-between mt-4">
            
            
-           <Link to={`/dashboard/update/:${house._id}`}>
+           <Link to={`/dashboard/update/${house._id}`}>
               <button className="bg-green-400 px-6 py-2 rounded-md">Update</button>
             </Link>
           

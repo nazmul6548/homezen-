@@ -172,7 +172,7 @@ export const router = createBrowserRouter([
             </AgentRoute>
           </PrivateRoute>
         ),
-        // loader:({params}) => fetch(`http://localhost:5000/house/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/house/${params.id}`)
       },
     ],
   },

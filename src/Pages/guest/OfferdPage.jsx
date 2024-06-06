@@ -4,30 +4,16 @@ import { useLoaderData } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 // import useAxiosPublic from "../../axios/useAxiosPublic";
 // import useAxiosSecure from "../../hook/useAxiosSecure";
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 const OfferdPage = () => {
+    const [startDate, setStartDate] = useState(new Date());
      const item =useLoaderData()
      console.log(item);
-// const axiosPublic=useAxiosPublic()
-// const axiosSecure=useAxiosSecure()
-//     const { id } = useParams();
-  
-//     const { data: item, isLoading, error } = useQuery({
-//       queryKey: ["wishlist", id],
-//       queryFn: async () => {
-//         const response = await axiosSecure.get(`/wishlist/${id}`);
-//         return response.data;
-//       },
-//     });
-//   console.log(item);
-//     if (isLoading) {
-//       return <p>Loading....</p>;
-//     }
-  
-//     if (error) {
-//       return <p>Error loading data: {error.message}</p>;
-//     }
+
 
     return (
         <div>
@@ -47,6 +33,7 @@ const OfferdPage = () => {
         <h1>Property Title</h1>
         <input
           type="email"
+          defaultValue={item?.productlist?.property_title}
           placeholder="Email"
           className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
         />
@@ -63,7 +50,8 @@ const OfferdPage = () => {
         <div>
         <h1>Agent Name</h1>
         <input
-          type="email"
+          type="text"
+          defaultValue={item?.productlist?.agent?.name}
           placeholder="Email"
           className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
         />
@@ -71,15 +59,16 @@ const OfferdPage = () => {
        <div>
         <h1>Offerd Amount</h1>
         <input
-          type="email"
-          placeholder="Email"
+          type="text"
+          
           className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
         />
         </div>
         <div>
         <h1>Buyer Email</h1>
         <input
-          type="email"
+          type="text"
+          defaultValue={item?.buyeremail}
           placeholder="Email"
           className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
         />
@@ -88,17 +77,19 @@ const OfferdPage = () => {
         <h1>Buyer Name</h1>
         <input
           type="email"
+          defaultValue={item?.buyername}
           placeholder="Email"
           className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
         />
         </div>
         <div>
         <h1>Buying Date</h1>
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
-        />
+        <div  className="w-full bg-gray-100 rounded  px-4 text-sm outline-none">
+        <DatePicker className="w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
+        </div>
+         
+         
+        
         </div>
         
         {/* <input type="submit" value="OFFER" /> */}

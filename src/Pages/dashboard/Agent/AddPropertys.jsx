@@ -33,8 +33,17 @@ const {mutateAsync} = useMutation({
         const form = e.target;
         const property_title=form.property_title.value;
         const location=form.location.value;
-        const price_range = form.price_range.value;
+        const min_price = parseFloat(form.min_price.value);
+  const max_price = parseFloat(form.max_price.value);
+        // const price_range = form.price_range.value;
         const description = form.description.value;
+        const status="pending";
+        const price_range = {
+            min: min_price,
+            max: max_price
+          };
+        
+          
         const image = form.image.files[0];
         const agent= {
             name:user?.displayName,
@@ -43,7 +52,7 @@ const {mutateAsync} = useMutation({
         }
         try{
             const image_url = await imageUpload(image)
-            const result ={property_title,location,price_range,image:image_url,agent,description}
+            const result ={property_title,status,location,price_range,image:image_url,agent,description}
             // console.log(result);
             await mutateAsync(result)
         }catch (error) {

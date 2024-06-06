@@ -21,11 +21,19 @@ const Form = ({ handleSubmit,loading }) => {
           placeholder="Property Location"
           className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm mb-4 outline-none"
         />
+        
         <input
           type="number"
-          name="price_range"
+          name="max_price"
           required
-          placeholder="Price"
+          placeholder="Max Price"
+          className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm mb-4 outline-none"
+        />
+        <input
+          type="number"
+          name="min_price"
+          required
+          placeholder="Min Price"
           className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm mb-4 outline-none"
         />
         {/*  */}
