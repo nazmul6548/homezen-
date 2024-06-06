@@ -5,68 +5,69 @@ import { AuthContext } from "../../component/AuthProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+// import useAxiosPublic from "../../axios/useAxiosPublic";
+// import { axiosSecure } from "../../hook/useAxiosSecure";
 
 const MyWishList = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const axiosSecure = useAxiosSecure();
-  const {
-    data: wishlist = [],
-    isLoading,
-    refetch,
-    error,
-  } = useQuery({
+
+  const { data: wishlist = [], isLoading, refetch, error } = useQuery({
     queryKey: ["wishlist", user?.email],
     queryFn: async () => {
       if (!user?.email) {
         return [];
       }
-      const { data } = await axiosSecure.get(`/wishlist/${user?.email}`);
+      const { data } = await axiosSecure.get(`/wishlist/email/${user?.email}`);
       return data;
     },
   });
-  console.log(wishlist);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/wishlist/${id}`)
+          .then(res => {
+            if (res.data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
+          }).catch(error => {
+            console.error("Error deleting item:", error);
+            Swal.fire({
+              title: "Error!",
+              text: "There was a problem deleting the item.",
+              icon: "error"
+            });
+          });
+      }
+    });
+  };
+
   if (isLoading) {
-    return <p>loading....</p>;
+    return <p>Loading....</p>;
   }
 
   if (error) {
     return <p>Error loading wishlist: {error.message}</p>;
   }
-  const handleDelete = (data) => {
-    // console.log(data);
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-        if(result.isConfirmed){
-            axiosSecure.delete(`/wishlist/${data}`)
-            .then(res => {
-                if(res.data.deletedCount > 0){
-                    refetch()
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                      });
-                }
-            }).catch(error => {
-                console.error("Error deleting user:", error);
-                Swal.fire({
-                    title: "Error!",
-                    text: "There was a problem deleting the user.",
-                    icon: "error"
-                });
-            });
-        }
-    })
 
-};
+  // Ensure wishlist is an array
+  if (!Array.isArray(wishlist)) {
+    return <p>Error: Wishlist data is not an array</p>;
+  }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100 p-4">
       {
@@ -105,7 +106,7 @@ const MyWishList = () => {
             </svg>
           </div>
           <div className="flex justify-between mt-3">
-         <Link to="/dashboard/offerd"> <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Make Offer</button></Link>
+         <Link  to={`/dashboard/offerd/${wish?._id}`}> <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Make Offer</button></Link>
           <button onClick={()=>handleDelete(wish._id)} className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Remove</button>
           </div>
         </div>

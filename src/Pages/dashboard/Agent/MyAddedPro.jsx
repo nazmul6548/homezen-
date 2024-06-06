@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../component/AuthProvider";
 import { Button } from "flowbite-react";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyAddedPro = () => {
@@ -84,9 +85,17 @@ const handleDelete = (data) => {
               <p className="text-sm mt-4">
                 {house.description}
               </p>
-             <div className="flex mt-4 ">
-             <Button className="bg-green-400 text-black w-full mr-4">Update</Button>
-              <Button onClick={()=>handleDelete(house._id)} className="bg-green-400 text-black w-full ">Delete</Button>
+             <div className="flex justify-between mt-4">
+           
+           
+           <Link to={`/dashboard/update/:${house._id}`}>
+              <button className="bg-green-400 px-6 py-2 rounded-md">Update</button>
+            </Link>
+          
+             
+              <button onClick={()=>handleDelete(house._id)} className="bg-green-400 px-6 py-2 rounded-md">Delete</button>
+             
+          
              </div>
             </div>
           </div>

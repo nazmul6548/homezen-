@@ -1,6 +1,4 @@
-import {
-    createBrowserRouter,
-  } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root";
 import Home from "../Pages/Home";
 import LogIn from "../SigninSignup/LogIn";
@@ -21,86 +19,161 @@ import MyReviews from "../Pages/guest/MyReviews";
 import MyWishList from "../Pages/guest/MyWishList";
 import PropertyBought from "../Pages/guest/PropertyBought";
 import OfferdPage from "../Pages/guest/OfferdPage";
-
+import UpdatePropery from "../Pages/dashboard/Agent/UpdatePropery";
+import AdminRoute from "./AdminRoute";
+import AgentRoute from "./AgentRoute";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element:<Root></Root>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-            path:"/",
-            element:<Home></Home>
-        },
-        {
-            path:"/login",
-            element:<LogIn></LogIn>
-        },
-        {
-            path:"/register",
-            element:<Register></Register>
-        },
-        {
-            path:"/allproperties",
-            element:<PrivateRoute><AllProperties></AllProperties></PrivateRoute>
-
-        },
-        {
-            path:"/house/:id",
-            element:<PrivateRoute><AllPropertyDetails></AllPropertyDetails></PrivateRoute>
-        },
-       
-      ]
-    },
-    {
-        path:"/dashboard",
-        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-        children:[
-            {
-                index:true,
-                element:<Statistic></Statistic>
-            },
-            {
-                path:'addproperty',
-                element:<AddPropertys></AddPropertys>
-            },
-            {
-                path:'myaddedpro',
-                element:<MyAddedPro></MyAddedPro>
-            },
-            {
-                path:'myprofile',
-                element:<MyProfile></MyProfile>
-            },
-            {
-                path:"manageusers",
-                element:<ManageUsers></ManageUsers>
-            },
-            {
-                path:"managereview",
-                element:<ManageReview></ManageReview>
-            },
-            {
-                path:"managepropertys",
-                element:<ManagePropertys></ManagePropertys>
-            },
-            {
-                path:"myreviews",
-                element:<MyReviews></MyReviews>
-            },
-            {
-                path:"mywishlist",
-                element:<MyWishList></MyWishList>
-            },
-            {
-                path:"bought",
-                element:<PropertyBought></PropertyBought>
-            },
-            {
-                path:"offerd",
-                element:<OfferdPage></OfferdPage>
-            }
-        ]
-    }
-  ]);
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/allproperties",
+        element: (
+          <PrivateRoute>
+            <AllProperties></AllProperties>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/house/:id",
+        element: (
+          <PrivateRoute>
+            <AllPropertyDetails></AllPropertyDetails>
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Statistic></Statistic>,
+      },
+      {
+        path: "addproperty",
+        element: (
+        
+            <PrivateRoute>
+              <AgentRoute>
+              <AddPropertys></AddPropertys>
+              </AgentRoute>
+            </PrivateRoute>
+         
+        ),
+      },
+      {
+        path: "myaddedpro",
+        element: (
+          
+            <PrivateRoute>
+             <AgentRoute>
+             <MyAddedPro></MyAddedPro>
+             </AgentRoute>
+            </PrivateRoute>
+          
+        ),
+      },
+      {
+        path: "myprofile",
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "manageusers",
+        element: (
+         
+            <PrivateRoute>
+              <AdminRoute>
+              <ManageUsers></ManageUsers>
+              </AdminRoute>
+            </PrivateRoute>
+          
+        ),
+      },
+      {
+        path: "managereview",
+        element: (
+          
+            <PrivateRoute>
+              <AdminRoute>
+              <ManageReview></ManageReview>
+              </AdminRoute>
+            </PrivateRoute>
+          
+        ),
+      },
+      {
+        path: "managepropertys",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+            <ManagePropertys></ManagePropertys>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "myreviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "mywishlist",
+        element:<MyWishList></MyWishList>,
+      },
+      {
+        path: "bought",
+        element: (
+          <PrivateRoute>
+            <PropertyBought></PropertyBought>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/offerd/:id",
+        element:<PrivateRoute><OfferdPage></OfferdPage></PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/wishlist/${params.id}`),
+      },
+      {
+        path: "update/:id",
+        element: (
+          <PrivateRoute>
+            <AgentRoute>
+              <UpdatePropery></UpdatePropery>
+            </AgentRoute>
+          </PrivateRoute>
+        ),
+        // loader:({params}) => fetch(`http://localhost:5000/house/${params.id}`)
+      },
+    ],
+  },
+]);
