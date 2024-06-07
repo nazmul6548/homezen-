@@ -84,6 +84,9 @@ const ManageUsers = () => {
           Role
         </th>
         <th className="p-4 text-left text-xs font-semibold text-gray-800">
+          Fraud
+        </th>
+        <th className="p-4 text-left text-xs font-semibold text-gray-800">
           Status
         </th>
         <th className="p-4 text-left text-xs font-semibold text-gray-800">

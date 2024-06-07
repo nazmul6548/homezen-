@@ -23,6 +23,7 @@ import UpdatePropery from "../Pages/dashboard/Agent/UpdatePropery";
 import AdminRoute from "./AdminRoute";
 import AgentRoute from "./AgentRoute";
 import RequstedProperty from "../Pages/dashboard/Agent/RequstedProperty";
+import PaymentSystem from "../Pages/guest/PaymentSystem";
 
 export const router = createBrowserRouter([
   {
@@ -178,6 +179,11 @@ export const router = createBrowserRouter([
       {
         path:"requstedproperty",
         element:<RequstedProperty></RequstedProperty>
+      },
+      {
+        path:"bought/payment/:id",
+        element:<PaymentSystem></PaymentSystem>,
+        loader: ({ params }) => fetch(`http://localhost:5000/offerd/${params.id}`)
       }
     ],
   },

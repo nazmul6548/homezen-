@@ -88,6 +88,10 @@ const MyWishList = () => {
           <p className="mt-2 text-sm text-gray-500">
             Verification Status:{wish?.productlist?.status}
           </p>
+          <p className="mt-2 text-sm text-gray-500">
+            Price: {wish?.productlist?.price_range.max} || {wish?.productlist?.price_range.min}
+          </p>
+          
           <div className="flex flex-wrap items-center cursor-pointer border rounded-lg w-full px-4 py-2 mt-6">
             <img
               src={wish?.productlist?.agent?.image}

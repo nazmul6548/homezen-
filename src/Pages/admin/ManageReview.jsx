@@ -67,8 +67,8 @@ const handleDelte = (data) => {
             <div className="my-6 font-[sans-serif] text-[#333]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-extrabold">What our happy client say</h2>
-          <p className="text-sm text-[#333] mt-4 leading-relaxed">Veniam proident aute magna anim excepteur et ex consectetur velit ullamco veniam minim aute sit. Elit occaecat officia et laboris Lorem minim. Officia do aliqua adipisicing ullamco in.</p>
+          <h2 className="text-2xl font-extrabold">Admin manage Reviews</h2>
+          <p className="text-sm text-[#333] mt-4 leading-relaxed">The form is user-friendly and visually appealing, with a clean layout and intuitive design. The input fields are well-organized, making it easy to enter payment details. The responsive elements and smooth user experience enhance its overall functionality.</p>
         </div>
         <div className="grid md:grid-cols-3 md:gap-6 max-md:gap-10 max-md:justify-center mt-16">
          {/*  */}
@@ -82,7 +82,8 @@ const handleDelte = (data) => {
                   </svg>
                 </div>
                 <div className="flex items-center">
-                  <img src="https://readymadeui.com/profile_2.webp" className="w-14 h-14 rounded-full shadow-xl border-2 border-white" />
+                  <img src={review?.reviewerImage} className="w-14 h-14 rounded-full shadow-xl border-2 border-white" />
+                  
                   <div className="ml-4">
                     <h4 className="text-sm font-extrabold">{review.agent}</h4>
                     <div className="flex space-x-1 mt-2">
@@ -114,6 +115,7 @@ const handleDelte = (data) => {
                     </div>
                   </div>
                 </div>
+                  <p className="mt-3 font-bold">{review?.reviewerName}</p>
                 
               
                 <div className="mt-4">

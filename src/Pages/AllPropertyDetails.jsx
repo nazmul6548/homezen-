@@ -130,14 +130,17 @@ function onCloseModal() {
 			<h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">{house.property_title}</h1>
 			<p className="mt-6 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">{house.description}</p>
             <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price Range: max: {house?.price_range.max} || min: {house?.price_range.min}  </p>
+            <div>
+              <p className="font-bold pb-3">Agent : {house.agent.name}</p>
+            </div>
 			<div className="flex flex-wrap justify-center">
-				<button onClick={()=>addWishlist(house)} type="button" className="px-8 py-3 border m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
+				<button onClick={()=>addWishlist(house)} type="button" className="px-8 py-3 border m-2 text-lg font-semibold rounded bg-green-400 dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
 				
 				
 				{/*  */}
 				{/*  */}
 				{/*  */}
-        <button className="px-8 py-3 m-2 text-lg font-semibold border rounded dark:border-gray-300 dark:text-gray-50" onClick={() => setOpenModal(true)}>Add Review</button>
+        <button className="px-8 py-3 m-2 text-lg font-semibold border bg-green-400 rounded dark:border-gray-300 dark:text-gray-50" onClick={() => setOpenModal(true)}>Add Review</button>
       <Modal show={openModal} size="md" onClose={onCloseModal} popup>
         <Modal.Header />
         <Modal.Body>

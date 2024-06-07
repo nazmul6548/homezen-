@@ -48,6 +48,7 @@ const saveUser = async user => {
     const currentUser = {
         name:user?.displayName,
         email:user?.email,
+        fraud:"fraud",
         role:"guest",
         status:"verified",
     }

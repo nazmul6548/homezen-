@@ -36,7 +36,7 @@ const UpdateUserModal = ({ setIsOpen, isOpen, modalHandler, user }) => {
                 leaveFrom='opacity-100 scale-100'
                 leaveTo='opacity-0 scale-95'
               >
-                <DialogPanel className='w-full h-56 max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
+                <DialogPanel className='w-full h-56 max-w-md transform overflow-hidden rounded-2xl bg-green-100 p-6 text-left align-middle shadow-xl transition-all'>
                   <DialogTitle
                     as='h3'
                     className='text-lg font-medium text-center leading-6 text-gray-900'
@@ -46,7 +46,7 @@ const UpdateUserModal = ({ setIsOpen, isOpen, modalHandler, user }) => {
                   <div className='mt-4 w-full'>
                     <Listbox value={selected} onChange={setSelected}>
                       <div className='relative mt-1'>
-                        <ListboxButton className='relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
+                        <ListboxButton className='relative w-full cursor-default rounded-lg bg-green-300 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
                           <span className='block truncate'>{selected}</span>
                           <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
                             <AiOutlineDown

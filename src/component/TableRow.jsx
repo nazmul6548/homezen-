@@ -58,6 +58,9 @@ const modalHandler =async (selected)=>{
           
         </td>
         <td className="p-4 text-[15px] text-gray-800">
+          {user?.fraud}
+        </td>
+        <td className="p-4 text-[15px] text-gray-800">
           {user?.status}
         </td>
         <td className="p-4 text-[15px] text-gray-800">
