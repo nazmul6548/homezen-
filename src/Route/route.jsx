@@ -22,6 +22,7 @@ import OfferdPage from "../Pages/guest/OfferdPage";
 import UpdatePropery from "../Pages/dashboard/Agent/UpdatePropery";
 import AdminRoute from "./AdminRoute";
 import AgentRoute from "./AgentRoute";
+import RequstedProperty from "../Pages/dashboard/Agent/RequstedProperty";
 
 export const router = createBrowserRouter([
   {
@@ -174,6 +175,10 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) => fetch(`http://localhost:5000/house/${params.id}`)
       },
+      {
+        path:"requstedproperty",
+        element:<RequstedProperty></RequstedProperty>
+      }
     ],
   },
 ]);

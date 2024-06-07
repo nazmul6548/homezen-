@@ -26,7 +26,7 @@ const AgentMenu = () => {
               
               <MenuItem
             label='Requested properties'
-            address='/dashboard/requesproperty'
+            address='/dashboard/requstedproperty'
             icon={IoGitPullRequestSharp }>
           </MenuItem>
               <MenuItem

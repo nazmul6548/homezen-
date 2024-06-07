@@ -129,7 +129,7 @@ function onCloseModal() {
 		<div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50">
 			<h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">{house.property_title}</h1>
 			<p className="mt-6 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">{house.description}</p>
-            <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price Range: min: {house?.price_range.max} || max: {house?.price_range.min}  </p>
+            <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price Range: max: {house?.price_range.max} || min: {house?.price_range.min}  </p>
 			<div className="flex flex-wrap justify-center">
 				<button onClick={()=>addWishlist(house)} type="button" className="px-8 py-3 border m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
 				
