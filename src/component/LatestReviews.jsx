@@ -25,7 +25,7 @@ const LatestReviews = () => {
       <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-5xl font-extrabold p-3">What our happy client <span className="text-[#a8181f]">say</span></h2>
-              <p className="text-sm mt-2 leading-relaxed">Credibly expedite process-centric methodologies and customer directed customer service. Competently scale e-business partnerships rather than</p>
+              <p className="text-sm max-w-2xl mx-auto mt-2 leading-relaxed">Credibly expedite process-centric methodologies and customer directed customer service. Competently scale e-business partnerships rather than</p>
           </div>
          
           <div className="grid md:grid-cols-3 md:gap-6 max-md:gap-10 max-md:justify-center text-center mt-12">
@@ -33,7 +33,7 @@ const LatestReviews = () => {
                 reviews.map(revie=>(
                   <div key={revie._id} className="max-w-[350px] h-auto p-4 rounded-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)]">
                   <div className="flex flex-col items-center">
-                      <img src={revie?.reviewerImage} className="w-80 object-contain object-top rounded-md" alt="John Doe" />
+                      <img src={revie?.reviewerImage} className="w-70 object-contain object-top rounded-md h-[250px] " alt="John Doe" />
                       <div className="mt-4">
                           <h4 className="text-sm font-extrabold">{revie.reviewerName}</h4>
                           <p className="text-xs text-gray-400 font-extrabold mt-1">{revie?.Property_title}</p>

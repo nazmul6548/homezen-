@@ -69,13 +69,13 @@ const MyWishList = () => {
     return <p>Error: Wishlist data is not an array</p>;
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100 ">
       {
         wishlist.map(wish=>(
-            <div key={wish._id} className="bg-white grid sm:grid-cols-2 items-center shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-full max-w-xl rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+            <div key={wish._id} className="mb-16  bg-white grid sm:grid-cols-2 items-center shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-full max-w-xl rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-10">
         <img
           src={wish?.productlist?.image}
-          className="w-full h-full object-cover"
+          className="w-full h-[300px] md:h-full object-cover"
         />
         <div className="px-4 py-6">
           <h3 className="text-xl font-semibold">{wish?.productlist?.property_title}</h3>

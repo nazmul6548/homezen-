@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Statistic></Statistic>,
+        element: <PrivateRoute><Statistic></Statistic></PrivateRoute>,
       },
       {
         path: "addproperty",
@@ -150,7 +150,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "mywishlist",
-        element:<MyWishList></MyWishList>,
+        element:<PrivateRoute><MyWishList></MyWishList></PrivateRoute>,
       },
       {
         path: "bought",
@@ -179,16 +179,16 @@ export const router = createBrowserRouter([
       },
       {
         path:"requstedproperty",
-        element:<RequstedProperty></RequstedProperty>
+        element:<PrivateRoute><RequstedProperty></RequstedProperty></PrivateRoute>
       },
       {
         path:"bought/payment/:id",
-        element:<PaymentSystem></PaymentSystem>,
+        element:<PrivateRoute><PaymentSystem></PaymentSystem></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/offerd/${params.id}`)
       },
       {
         path:"sold",
-        element:<SoldProperty></SoldProperty>
+        element:<PrivateRoute><AgentRoute><SoldProperty></SoldProperty></AgentRoute></PrivateRoute>
       }
     ],
   },
