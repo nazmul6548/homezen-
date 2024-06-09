@@ -123,7 +123,7 @@ const CheckoutFrom = ({data}) => {
       backgroundColor: '#f9fafb',
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="bg-green-100 min-h-screen px-4 py-8" onSubmit={handleSubmit}>
      
 
 
@@ -160,18 +160,12 @@ const CheckoutFrom = ({data}) => {
     </div>
   </div>
 
-  <ul className="text-gray-800 mt-8 space-y-2">
-    <li className="flex flex-wrap gap-4 text-sm">Subtotal <span className="ml-auto font-bold">$138.00</span></li>
-    <li className="flex flex-wrap gap-4 text-sm">Discount <span className="ml-auto font-bold">$0.00</span></li>
-    <li className="flex flex-wrap gap-4 text-sm">Tax <span className="ml-auto font-bold">$4.00</span></li>
-    <hr className="border-gray-300" />
-    <li className="flex flex-wrap gap-4 text-sm font-bold">Total <span className="ml-auto">$142.00</span></li>
-  </ul>
+
                 {/*  */}
                 {/*  */}
       
       
-      <button type="submit"  disabled={!stripe || !clientSecret} className="w-full py-3 rounded-lg text-sm tracking-wider font-medium border border-green-700 outline-none bg-transparent hover:bg-green-400 text-black hover:text-white transition-all duration-300" >
+      <button type="submit"  disabled={!stripe || !clientSecret} className="w-full mt-8 py-3 rounded-lg text-sm tracking-wider font-medium border border-green-700 outline-none bg-transparent hover:bg-green-400 text-black hover:text-white transition-all duration-300" >
         Pay
       </button>
       <p>{error}</p>

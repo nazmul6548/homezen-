@@ -47,12 +47,13 @@ if (isLoading) {
                   </svg>
                 </div>
                 <div className="relative">
-                <img src={offer?.offerProperty?.productlist.image} className="w-full my-6" />
-                <span className="absolute bottom-0 right-0 text-white font-bold bg-black px-2 py-1 opacity-60 rounded-xl">{offer?.offerProperty?.productlist.status}</span>
+                <img src={offer?.offerProperty?.productlist.image} className="w-full h-[300px] my-6" />
+                <span className="absolute bottom-0 right-0 text-white font-bold  bg-black px-2 py-1 opacity-60 rounded-xl">{offer?.offerProperty?.productlist.status}</span>
                 </div>
                 <div className="px-6">
                   <p className="text-sm text-gray-500">{offer?.offerProperty?.productlist.description}</p>
                   <p className="text-sm text-gray-700 mt-2">{offer?.offerProperty?.productlist.location}</p>
+                  <h6 className="text-sm text-gray-700 mt-2">{offer?.offerProperty?.productlist?.agent?.name}</h6>
                   <div className="mt-10 flex items-center flex-wrap gap-4">
                     <h3 className="text-xl text-[#333] font-bold flex-1">${offer?.offeerAmount}</h3>
                     <Link to={`/dashboard/bought/payment/${offer._id}`}>

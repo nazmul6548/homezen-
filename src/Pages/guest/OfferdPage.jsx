@@ -108,6 +108,8 @@ const OfferdPage = () => {
         <input
         type="number" 
         value={offerAmount}
+        
+        placeholder={`between : ${price_range?.max} - ${price_range?.min}`}
         onChange={(e) => setOfferAmount(e.target.value)}
         className="w-full bg-gray-100 rounded py-3 px-4 text-sm outline-none"
 

@@ -143,7 +143,7 @@ const UpdatePropery = () => {
     {/*  */}
     
       
-     <input type="submit" value="Update"   className="text-white bg-blue-500 hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-3 w-full"/>
+     <input type="submit" value="Update"   className="text-white bg-green-400 hover:bg-green-600 font-semibold rounded-md text-sm px-4 py-3 w-full"/>
     
     
   </form>

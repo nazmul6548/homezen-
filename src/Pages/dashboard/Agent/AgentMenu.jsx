@@ -31,9 +31,11 @@ const AgentMenu = () => {
           </MenuItem>
               <MenuItem
             label='My sold properties            '
-            address='/dashboard/soldpropertys'
+            address='/dashboard/sold'
             icon={MdOutlineSell }>
           </MenuItem>
+  
+              
     </>
   )
 }

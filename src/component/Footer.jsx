@@ -2,65 +2,77 @@
 
 const Footer = () => {
     return (
-        <div>
-           <footer className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 py-10 px-10 font-sans tracking-wide">
-      <div className="max-w-2xl mx-auto text-center">
-        <a  className="inline-block">
-          <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" alt="logo" className="w-48" />
-        </a>
-        <p className="text-sm mt-8 text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida, mi eu pulvinar cursus, sem elit interdum mauris.
-          <a href="javascript:void(0)" className="text-sm font-semibold text-blue-500"> Read more...</a>
-        </p>
-        <ul className="flex items-center justify-center flex-wrap gap-y-3 gap-x-6 mt-8">
-          <li>
-            <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 512 512">
-                <path fill="#1877f2" d="M512 256c0 127.78-93.62 233.69-216 252.89V330h59.65L367 256h-71v-48.02c0-20.25 9.92-39.98 41.72-39.98H370v-63s-29.3-5-57.31-5c-58.47 0-96.69 35.44-96.69 99.6V256h-65v74h65v178.89C93.62 489.69 0 383.78 0 256 0 114.62 114.62 0 256 0s256 114.62 256 256z" />
-                <path fill="#fff" d="M355.65 330 367 256h-71v-48.021c0-20.245 9.918-39.979 41.719-39.979H370v-63s-29.296-5-57.305-5C254.219 100 216 135.44 216 199.6V256h-65v74h65v178.889c13.034 2.045 26.392 3.111 40 3.111s26.966-1.066 40-3.111V330z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 176 176">
-                <g>
-                  <rect width="176" height="176" fill="#0077b5" rx="24" />
-                  <path fill="#fff" d="M63.4 48a15 15 0 1 1-15-15 15 15 0 0 1 15 15zM60 73v66.27a3.71 3.71 0 0 1-3.71 3.73H40.48a3.71 3.71 0 0 1-3.72-3.72V73a3.72 3.72 0 0 1 3.72-3.72h15.81A3.72 3.72 0 0 1 60 73zm82.64 34.5v32.08a3.41 3.41 0 0 1-3.42 3.42h-17a3.41 3.41 0 0 1-3.42-3.42v-31.09c0-4.64 1.36-20.32-12.13-20.32-10.45 0-12.58 10.73-13 15.55v35.86A3.42 3.42 0 0 1 90.3 143H73.88a3.41 3.41 0 0 1-3.41-3.42V72.71a3.41 3.41 0 0 1 3.41-3.42H90.3a3.42 3.42 0 0 1 3.42 3.42v5.78c3.88-5.82 9.63-10.31 21.9-10.31 27.18 0 27.02 25.38 27.02 39.32z" />
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 24 24">
-                <linearGradient id="a" x1="-37.106" x2="-26.555" y1="-72.705" y2="-84.047" gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#fd5" />
-                  <stop offset=".5" stopColor="#ff543e" />
-                  <stop offset="1" stopColor="#c837ab" />
-                </linearGradient>
-                <path fill="url(#a)" d="M1.5 1.633C-.386 3.592 0 5.673 0 11.995c0 5.25-.916 10.513 3.878 11.752 1.497.385 14.761.385 16.256-.002 1.996-.515 3.62-2.134 3.842-4.957.031-.394.031-13.185-.001-13.587-.236-3.007-2.087-4.74-4.526-5.091C18.89.029 18.778.005 15.91 0 5.737.005 3.507-.448 1.5 1.633z" />
-                <path fill="#fff" d="M11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.488-7.375-1.7-1.7-3.999-1.487-7.374-1.487zm-.794 1.597c7.574-.012 8.538-.854 8.006 10.843-.189 4.137-3.339 3.683-7.211 3.683-7.06 0-7.263-.202-7.263-7.265 0-7.145.56-7.257 6.468-7.263zm5.524 1.471a1.063 1.063 0 1 0 0 2.126 1.063 1.063 0 0 0 0-2.126zm-4.73 1.243a4.55 4.55 0 1 0 .001 9.101 4.55 4.55 0 0 0-.001-9.101zm0 1.597c3.905 0 3.91 5.908 0 5.908-3.904 0-3.91-5.908 0-5.908z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              {/* <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 1227 1227">
-                <path d="M613.5 0C274.685 0 0 274.685 0 613.5S274.685 1227 613.5 1227 1227 952.315 1227 613.5 952.315 0 613.5 0z" />
-                <path fill="#fff" d="m680.617 557.98 262.632-305.17H755.874c-38.013 0-61.075 14.97-61.075 53.099V557.98H613.5v138.376h81.299v303.85C736.186 1015.377 676.074 1024 613.5 1024c-226.272 0-410.5-184.228-410.5-410.5S387.228 203 613.5 203c226.271 0 410.5 184.228 410.5 410.5 0 55.5-11.156 108.372-31.252 156.5l-30.724-31.15c21.448-41.068 32.476-87.345 32.476-136.35 0-225.858-184.157-410.015-410.015-410.015-225.858 0-410.015 184.157-410.015 410.015 0 225.858 184.157 410.015 410.015 410.015 225.858 0 410.015-184.157 410.015-410.015 0-5.17-.06-10.32-.179-15.45-7.904-34.24-20.637-65.77-37.924-93.94-25.042-42.73-59.972-79.69-102.489-108.32-30.74-20.49-64.8-36.47-101.09-47.34-47.499-13.47-96.93-19.81-147.561-19.81-226.271 0-410.5 184.229-410.5 410.5S387.229 1227 613.5 1227c226.271 0 410.5-184.229 410.5-410.5 0-12.253-.69-24.402-2.02-36.408H680.617z" />
-              </svg> */}
-            </a>
-          </li>
-        </ul>
-        <div className="text-sm mt-8 text-gray-200">
-          <p>Phone: +1-234-567-890</p>
-          <p>Email: info@example.com</p>
-          <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+      <footer className=" bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 font-sans tracking-wide">
+      <div className="py-14 px-6 sm:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    
+          <div className="lg:col-span-2">
+            <a><img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" alt="logo"
+              className="w-44 bg-white rounded-xl opacity-50 mb-8" /></a>
+            <p className="text-gray-300 text-sm">Discover your perfect home with HomeZen, where finding your dream property is a serene and stress-free experience. Our platform is designed to connect you with the finest real estate options, tailored to suit your lifestyle and needs.</p>
+          </div>
+    
+          <div>
+            <h4 className="text-lg font-semibold mb-8 text-white">Navigation</h4>
+            <ul className="space-y-4">
+              <li><a  className="text-gray-300 hover:text-white text-sm">About</a></li>
+              <li><a  className="text-gray-300 hover:text-white text-sm">Services</a></li>
+              <li><a  className="text-gray-300 hover:text-white text-sm">Contact</a></li>
+              <li><a  className="text-gray-300 hover:text-white text-sm">Home</a></li>
+            </ul>
+          </div>
+    
+          <div>
+            <h4 className="text-lg font-semibold mb-8 text-white">Follow Us</h4>
+    
+            <ul className="flex gap-4">
+              <li><a >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-gray-300 inline hover:fill-white w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path fillRule="evenodd"
+                    d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7v-7h-2v-3h2V8.5A3.5 3.5 0 0 1 15.5 5H18v3h-2a1 1 0 0 0-1 1v2h3v3h-3v7h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"
+                    clipRule="evenodd" />
+                </svg></a></li>
+              <li><a  className="text-gray-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-gray-300 inline hover:fill-white w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path fillRule="evenodd"
+                    d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-2.5 8.2v5.3h-2.79v-4.93a1.4 1.4 0 0 0-1.4-1.4c-.77 0-1.39.63-1.39 1.4v4.93h-2.79v-8.37h2.79v1.11c.48-.78 1.47-1.3 2.32-1.3 1.8 0 3.26 1.46 3.26 3.26zM6.88 8.56a1.686 1.686 0 0 0 0-3.37 1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 1.57v8.37H5.5v-8.37h2.77z"
+                    clipRule="evenodd" />
+                </svg></a></li>
+              <li><a  className="text-gray-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-gray-300 inline hover:fill-white w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z" />
+                </svg></a></li>
+              <li><a  className="text-gray-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-gray-300 inline hover:fill-white w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M22.92 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.83 4.5 17.72 4 16.46 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.9 20.29 6.16 21 8.58 21c7.88 0 12.21-6.54 12.21-12.21 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                </svg></a></li>
+            </ul>
+    
+          </div>
+    
+          <div>
+            <h4 className="text-lg font-semibold mb-8 text-white">Contact Us</h4>
+            <div className="space-y-4">
+              <p className="text-gray-300 text-sm">123 Street, City Name</p>
+              <p className="text-gray-300 text-sm">contact@example.com</p>
+              <p className="text-gray-300 text-sm">+1 234 567 890</p>
+            </div>
+          </div>
+    
         </div>
       </div>
+    
+      <div className="text-center py-5 bg-[#0a151f]">
+        <p className="text-gray-300 text-sm">© 2024<a  target="_blank"
+          className="hover:underline mx-1">Homzen</a>All Rights Reserved.</p>
+      </div>
     </footer>
-        </div>
     );
 };
 

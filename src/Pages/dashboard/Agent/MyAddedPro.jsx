@@ -76,7 +76,7 @@ const handleDelete = (data) => {
             <img
               src={house.image}
               alt="Blog Post 1"
-              className="lg:w-2/5 min-h-[250px] h-full object-cover"
+              className="lg:w-2/5 min-h-[250px] h-[350px] object-cover"
             />
             <div className="p-6 lg:w-3/5">
               <h3 className="text-xl font-bold text-[#333]">{house.property_title}</h3>
@@ -85,6 +85,29 @@ const handleDelete = (data) => {
               <p className="text-sm mt-4">
                 {house.description}
               </p>
+              <p className="bg-slate-700 px-3 py-1 mt-2 w-[80px] rounded-xl text-white">{house?.status}</p>
+              {/*  */}
+              <div className="flex flex-wrap items-center cursor-pointer border rounded-lg w-full px-4 py-2 mt-6">
+            <img
+              src={house?.agent?.image}
+              className="w-9 h-9 rounded-full"
+            />
+            <div className="ml-4 flex-1">
+              <p className="text-sm text-black font-semibold"> {house?.agent?.name} </p>
+              <p className="text-xs text-gray-400">agent</p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 fill-gray-400"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M13 16c0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3-3 1.346-3 3zm0 10c0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3-3 1.346-3 3zm0-20c0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3-3 1.346-3 3z"
+                data-original="#000000"
+              />
+            </svg>
+          </div>
+              {/*  */}
              <div className="flex justify-between mt-4">
            
            

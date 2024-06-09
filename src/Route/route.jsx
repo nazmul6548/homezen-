@@ -24,6 +24,7 @@ import AdminRoute from "./AdminRoute";
 import AgentRoute from "./AgentRoute";
 import RequstedProperty from "../Pages/dashboard/Agent/RequstedProperty";
 import PaymentSystem from "../Pages/guest/PaymentSystem";
+import SoldProperty from "../Pages/dashboard/Agent/SoldProperty";
 
 export const router = createBrowserRouter([
   {
@@ -184,6 +185,10 @@ export const router = createBrowserRouter([
         path:"bought/payment/:id",
         element:<PaymentSystem></PaymentSystem>,
         loader: ({ params }) => fetch(`http://localhost:5000/offerd/${params.id}`)
+      },
+      {
+        path:"sold",
+        element:<SoldProperty></SoldProperty>
       }
     ],
   },

@@ -19,7 +19,7 @@ const Slide = () => {
           pagination={{ clickable: true }}
           modules={[Navigation, Autoplay, Pagination]}
           loop={true}
-          // autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 5000 }}
           effect="fade"
          
         >
