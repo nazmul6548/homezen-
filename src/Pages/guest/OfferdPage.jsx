@@ -47,7 +47,7 @@ const OfferdPage = () => {
       const offerProperty = item;
       const offeerAmount= parseFloat(amount);
       const res={offerProperty,offeerAmount}
-      console.log(res);
+      // console.log(res);
 
 
        

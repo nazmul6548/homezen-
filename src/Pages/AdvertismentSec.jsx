@@ -20,7 +20,7 @@ const AdvertismentSec = () => {
 
 
 
-    console.log(houses);
+    // console.log(houses);
     if (isLoading) {
       return <p>loading....</p>;
     }

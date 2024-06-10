@@ -17,7 +17,7 @@ const ManageReview = () => {
 
         }
     })
-    console.log(reviews);
+    // console.log(reviews);
     if (isLoading){
         return<p>loading....</p>
     }

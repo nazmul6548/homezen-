@@ -36,7 +36,7 @@ const AllProperties = () => {
   });
   // 
   // 
-  console.log(houses);
+  // console.log(houses);
   if (isLoading) {
     return <p>loading....</p>;
   }

@@ -15,7 +15,7 @@ const ManagePropertys = () => {
         return data;
       },
     });
-    console.log(houses);
+    // console.log(houses);
     if (isLoading) {
         return <p>loading....</p>;
       }
@@ -59,7 +59,7 @@ const ManagePropertys = () => {
     
     };
     return (
-        <div>
+        <div className="font-[sans-serif] overflow-x-auto">
            <table className="min-w-full bg-white">
   <thead className="bg-gray-800 whitespace-nowrap">
     <tr>

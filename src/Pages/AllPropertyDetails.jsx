@@ -89,7 +89,7 @@ function onCloseModal() {
       return data;
     },
   });
-  console.log(house);
+  // console.log(house);
   if (isLoading) {
     return<p>loading....</p>;
        
@@ -121,7 +121,7 @@ function onCloseModal() {
               });
         }
     
-      console.log(res);
+      // console.log(res);
     }
   return <div>
     <section>

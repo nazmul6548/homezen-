@@ -68,7 +68,7 @@ const ManageUsers = () => {
     // 
     // 
     // 
-   console.log(users);
+  //  console.log(users);
     return (
         <div className="font-sans overflow-x-auto">
   <table className="min-w-full bg-white">

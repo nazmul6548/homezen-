@@ -23,7 +23,7 @@ const SoldProperty = () => {
         return sum + (solds?.paymentdata?.offeerAmount || 0);
     }, 0);
     return (
-        <div>
+        <div className="font-[sans-serif] overflow-x-auto">
            <table className="min-w-full bg-white">
   <thead className="bg-gray-800 whitespace-nowrap">
     <tr>

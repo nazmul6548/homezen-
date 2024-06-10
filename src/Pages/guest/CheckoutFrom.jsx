@@ -17,7 +17,7 @@ const CheckoutFrom = ({data}) => {
     const {user} =useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
     const totalPrice =offeerAmount;
-    console.log(totalPrice);
+    // console.log(totalPrice);
 
     useEffect(()=>{
       if (totalPrice > 0) {
@@ -47,7 +47,7 @@ const CheckoutFrom = ({data}) => {
         });
 
         if (error) {
-          console.log('payment error', error);
+          // console.log('payment error', error);
           setError(error.message);
       }
       else {

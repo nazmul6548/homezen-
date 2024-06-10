@@ -20,7 +20,7 @@ console.log(user);
         },
         enabled: !!user?.email, 
       });
-    console.log(review);
+    // console.log(review);
     if (isLoading) {
       return <p>loading....</p>;
     }

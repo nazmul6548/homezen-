@@ -6,7 +6,7 @@ import CheckoutFrom from "./CheckoutFrom";
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gatway_pk)
 const PaymentSystem = () => {
 const data =useLoaderData()
-console.log(data);
+// console.log(data);
 
 
     return (

@@ -19,7 +19,7 @@ console.log(user);
         return data;
       },
     });
-    console.log(houses);
+    // console.log(houses);
     if (isLoading) {
       return <p>loading....</p>;
     }
