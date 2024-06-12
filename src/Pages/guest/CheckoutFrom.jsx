@@ -78,7 +78,7 @@ const CheckoutFrom = ({data}) => {
           imageHeight: 200,
           imageAlt: "Custom image"
         });
-        navigate('/dashboard/bought')
+        // navigate('/dashboard/bought')
           console.log('transaction id', paymentIntent.id);
           setTransactionId(paymentIntent.id);
 
@@ -165,11 +165,26 @@ const CheckoutFrom = ({data}) => {
                 {/*  */}
       
       
-      <button type="submit"  disabled={!stripe || !clientSecret} className="w-full mt-8 py-3 rounded-lg text-sm tracking-wider font-medium border border-green-700 outline-none bg-transparent hover:bg-green-400 text-black hover:text-white transition-all duration-300" >
+      {/* <button type="submit"  disabled={!stripe || !clientSecret} className="w-full mt-8 py-3 rounded-lg text-sm tracking-wider font-medium border border-green-700 outline-none bg-transparent hover:bg-green-400 text-black hover:text-white transition-all duration-300" >
         Pay
       </button>
       <p>{error}</p>
-      {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
+      {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>} */}
+      {!transactionId ? (
+        <button
+          type="submit"
+          disabled={!stripe || !clientSecret}
+          className="w-full mt-8 py-3 rounded-lg text-sm tracking-wider font-medium border border-green-700 outline-none bg-transparent hover:bg-green-400 text-black hover:text-white transition-all duration-300"
+          onClick={handleSubmit}
+        >
+          Pay
+        </button>
+      ) : (
+        <p className="text-green-600">
+          Your transaction id: {transactionId}
+        </p>
+      )}
+      <p>{error}</p>
     </form>
     );
 };

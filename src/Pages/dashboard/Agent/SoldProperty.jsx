@@ -1,22 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
+import { useContext } from "react";
+import { AuthContext } from "../../../component/AuthProvider";
 
 
 const SoldProperty = () => {
+  const {user} = useContext(AuthContext)
 
     const axiosSecure = useAxiosSecure()
-    const {data:sold=[],isLoading,refetch}=useQuery({
-        queryKey:["reviews"],
-        queryFn:async()=>{
-            const {data} = await axiosSecure.get("/payment")
-            return data;
-
-
-        }
-    })
-    // console.log(s);
-    if (isLoading){
-        return<p>loading....</p>
+   
+    const { data: sold = [], isLoading,refetch } = useQuery({
+      queryKey: ["request","offerd",user?.email],
+      queryFn: async () => {
+        const { data } = await axiosSecure.get(`/paymentss/${user?.email}`);
+        return data;
+      },
+    });
+    console.log(sold);
+    if (isLoading) {
+      return <p>loading....</p>;
     }
 
     const totalSum = sold.reduce((sum, solds) => {

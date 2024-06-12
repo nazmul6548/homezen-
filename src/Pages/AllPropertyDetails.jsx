@@ -24,13 +24,15 @@ const AllPropertyDetails = () => {
         const {data} = await axiosSecure.post("/reviews",result)
         return data
     },
-    onSuccess:()=>{
-       console.log("adde success");
-       
-       Swal.fire("added Successfully!");
-          // navigate("/house/:id")
-          refetch()
-        setloading(false)
+    onSuccess:async ()=>{
+      try {
+        await refetch();
+        Swal.fire("Added Successfully!");
+        setloading(false);
+      } catch (error) {
+        console.error("Error refetching data:", error);
+        setloading(false);
+      }
     }
 })
   // 
@@ -74,6 +76,7 @@ const AllPropertyDetails = () => {
 // 
 function onCloseModal() {
   setOpenModal(false);
+  
   setEmail('');
 }
 // 
@@ -181,7 +184,7 @@ function onCloseModal() {
 
 {/*  */}
 {/*  */}
-<CommentSec house={house} refetchReviews={refetch}></CommentSec>
+<CommentSec house={house} refetch={refetch}></CommentSec>
   </div>;
 
 };

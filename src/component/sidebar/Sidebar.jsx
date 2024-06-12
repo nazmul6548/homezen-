@@ -93,9 +93,11 @@ const Sidebar = () => {
               role==="agent" && <HostMenu></HostMenu>
               
              }
-             {
-              role==="guest" && <GuestMenu></GuestMenu>
-             }
+             
+              {
+                role==="guest" && <GuestMenu></GuestMenu>
+              }
+             
               
             </nav>
           </div>

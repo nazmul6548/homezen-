@@ -78,7 +78,7 @@ const AllProperties = () => {
           </div>
               <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
               {sortedHouses && sortedHouses.length > 0 ? (
-              sortedHouses.map((house) => (
+              sortedHouses.filter((house) => house.status === 'verified').map((house) => (
                 <AllPropertycard key={house._id} house={house} />
               ))
             ) : (

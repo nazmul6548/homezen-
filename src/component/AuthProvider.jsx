@@ -45,17 +45,17 @@ const axiosCommon=useAxiosCommon()
 //     return data
 //   }
 // // save user
-// const saveUser = async user => {
-//     const currentUser = {
-//         name:user?.displayName,
-//         email:user?.email,
-//         fraud:"fraud",
-//         role:"guest",
-//         status:"verified",
-//     }
-//     const {data} = await axios.put(`${import.meta.env.VITE_API_URL}/user`,currentUser)
-//     return data
-// }
+const saveUser = async user => {
+    const currentUser = {
+        name:user?.displayName,
+        email:user?.email,
+        fraud:"fraud",
+        role:"guest",
+        status:"verified",
+    }
+    const {data} = await axios.put(`${import.meta.env.VITE_API_URL}/user`,currentUser)
+    return data
+}
 
 
     const login = (email, password) => {
@@ -65,6 +65,7 @@ const axiosCommon=useAxiosCommon()
 
     const googlelogin = () => {
         setLoader(true)
+        saveUser(user)
          return signInWithPopup(auth, provider)
          
     }
@@ -80,6 +81,7 @@ const axiosCommon=useAxiosCommon()
                 getAuth()
             setUser(user)
             if (user) {
+                saveUser(user)
                const userInfo ={email:user.email};
                axiosCommon.post('/jwt',userInfo)
                .then(res => {

@@ -1,25 +1,39 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
+import { useContext } from "react";
+import { AuthContext } from "../../../component/AuthProvider";
 
 
 const RequstedProperty = () => {
+  const {user} =useContext(AuthContext)
+  console.log(user.email);
 const axiosSecure = useAxiosSecure()
 
-    const {data:offerd=[],isLoading,refetch}=useQuery({
-        queryKey:["offerd"],
-        queryFn:async()=>{
-            const {data} = await axiosSecure.get("/offerd")
-            return data;
+// const handlePropertyAccept =(email,name,status)=>{
+// console.log(email,name,status);
+// axiosSecure.patch(`offerAccepted/${email}`,{status})
+// .then((data)=>{
+// console.log(data.data);
+// if (data.data.modifidcount) {
+  // refetch()
+
+// }
+// })
+// }
 
 
-        }
-    })
+
+    const { data: offerd = [], isLoading,refetch } = useQuery({
+      queryKey: ["request","offerd",user?.email],
+      queryFn: async () => {
+        const { data } = await axiosSecure.get(`/offerdss/${user?.email}`);
+        return data;
+      },
+    });
     console.log(offerd);
-    if (isLoading){
-        return<p>loading....</p>
+    if (isLoading) {
+      return <p>loading....</p>;
     }
-
-
 
 
     return (
@@ -71,8 +85,13 @@ const axiosSecure = useAxiosSecure()
           ${offer.offeerAmount}
         </td>
         <td className="px-4 py-4 text-sm text-gray-800">
-          <button className="text-blue-600 mr-4">Accept</button>
-          <button className="text-red-600">Reject</button>
+          {/* <button className="text-blue-600 mr-4">Accept</button>
+          <button className="text-red-600">Reject</button> */}
+          {/* {
+            offer?.offerProperty?.productlist?.status==='pending'?(
+              <button onClick={handlePropertyAccept(offer._id)}></button>
+            )
+          } */}
         </td>
       </tr>
         ))
