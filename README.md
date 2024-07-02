@@ -6,6 +6,7 @@ HomeZen Live Site:https://real-estate-platform-b620c.web.app
 ##Over View
 
 .HomeZen is a modern real estate platform designed for seamless property browsing and transactions. It offers intuitive features for buyers, sellers, and agents, ensuring a user-friendly experience in the housing market.
+
 .In this project, I encountered challenges with implementing sorting functionality. After thorough research on Stack Overflow, I successfully resolved these issues.
 
 ##Features of HomeZen
@@ -32,5 +33,7 @@ HomeZen is dedicated to making your real estate journey as smooth and enjoyable 
 ##how this project locally run
 
 .git clone https://github.com/your-username/repository.git(for example)
+
 .cd repository
+
 .npm install
