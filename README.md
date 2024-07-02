@@ -21,10 +21,7 @@ HomeZen Live Site:https://real-estate-platform-b620c.web.app
 8.Price Offers: Users and guests can submit price offers to agents. If the agent agrees, the user can proceed to the payment system.
 9.Payment System: Users can make payments directly through the platform, facilitating seamless property transactions.
 10.Sold Property Management: Once payment is completed, properties are marked as sold, providing clear transaction records.
-11.User-Friendly Interface: A clean and intuitive interface ensures a smooth user experience for all roles.
-12.Responsive Design: HomeZen is fully responsive, providing a great user experience on both desktop and mobile devices.
-13.Secure Platform: Robust security measures are in place to protect user data and transaction details.
-14.Comprehensive Search: Users can easily search for properties using various filters to find their perfect home.
+
 HomeZen is dedicated to making your real estate journey as smooth and enjoyable as possible. Explore, manage, and secure your dream property with ease. Welcome to HomeZen, where tranquility meets real estate.
 
 ##Technologys:
