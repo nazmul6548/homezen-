@@ -1,9 +1,11 @@
 #HomeZen Real Estate Platform
 
 HomeZen Live Site:https://real-estate-platform-b620c.web.app
+
 ##Over View
 .HomeZen is a modern real estate platform designed for seamless property browsing and transactions. It offers intuitive features for buyers, sellers, and agents, ensuring a user-friendly experience in the housing market.
 .In this project, I encountered challenges with implementing sorting functionality. After thorough research on Stack Overflow, I successfully resolved these issues.
+
 ##Features of HomeZen
 1.Three Distinct Roles: HomeZen offers separate dashboards and functionalities for Admin, Agent, and User (Guest) roles.
 2.Admin Management: Admins can add and manage users, guests, and agents, ensuring a streamlined workflow.
