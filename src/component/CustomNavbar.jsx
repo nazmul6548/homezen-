@@ -1,57 +1,65 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-import HostModal from "./HostModal";
+// import HostModal from "./HostModal";
 import { ToastContainer, toast } from "react-toastify";
-import useAxiosSecure from "../hook/useAxiosSecure";
+// import useAxiosSecure from "../hook/useAxiosSecure";
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 
 
 const CustomNavbar = () => {
-  const axiosSecure = useAxiosSecure()
+  // const axiosSecure = useAxiosSecure()
 const {user,loader,logout} =useContext(AuthContext)
-// console.log(user);
-// for modal
-const [isModalOpen,setIsModalOpen] = useState(false)
-const closeModal=() => {
-setIsModalOpen(false)
-}
-const modalHandler = async  () => {
-  console.log("i want");
+
+// const [isModalOpen,setIsModalOpen] = useState(false)
+// const closeModal=() => {
+// setIsModalOpen(false)
+// }
+// const modalHandler = async  () => {
+//   console.log("i want");
   
-  try {
-    const currentUser = {
-      email: user?.email,
-      role: 'guest',
-      status: 'Requested',
-    }
-    const { data } = await axiosSecure.put(`/user`, currentUser)
-    console.log(data)
-    if (data.modifiedCount > 0) {
-      toast.success('Success! wait for admin confirmation')
-    } else {
-      toast.success('Please!, Wait Admin confirmation')
-    }
-    closeModal();
-  }catch (err) {
-    console.log(err)
-    toast.error(err.message)
-  } finally {
-    closeModal()
-  }
-}
+//   try {
+//     const currentUser = {
+//       email: user?.email,
+//       role: 'guest',
+//       status: 'Requested',
+//     }
+//     const { data } = await axiosSecure.put(`/user`, currentUser)
+//     console.log(data)
+//     if (data.modifiedCount > 0) {
+//       toast.success('Success! wait for admin confirmation')
+//     } else {
+//       toast.success('Please!, Wait Admin confirmation')
+//     }
+//     closeModal();
+//   }catch (err) {
+//     console.log(err)
+//     toast.error(err.message)
+//   } finally {
+//     closeModal()
+//   }
+// }
+
+
 
 
     const navOption = <>
-    <Navbar.Link href="/">
+    
+    <div className="flex flex-col md:flex-row justify-between md:ml-[180px] font-bold  ">
+    <Navbar.Link href="/" className="md:mr-10" 
+     
+    >
             Home
           </Navbar.Link>
          
-          <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
+          <Navbar.Link href="/dashboard" className="">Dashboard</Navbar.Link>
           
-          <Navbar.Link href="/allproperties">All Properties</Navbar.Link>
+          
+          <Navbar.Link href="/allproperties" className="md:ml-10">All Properties</Navbar.Link>
+    </div>
     </>
+ 
     return loader ? (
         <div className="flex items-center justify-center w-full h-[100vh] text-gray-100 ">
         <div>
@@ -74,18 +82,15 @@ const modalHandler = async  () => {
         </div>
       </div>
        ) : (
-        <Navbar fluid rounded className="fixed z-20 opacity-70 w-full bg-white ">
+        <Navbar fluid rounded className="mx-auto justify- min-w-full">
         <Navbar.Brand >
-          <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-          {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span> */}
+          <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" className="mr-3  h-6 sm:h-9" alt="Logo" />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
         </Navbar.Brand>
-        <div className="flex md:order-2 justify-around">
-        {/*  */}
-        {/*  */}
-        {/* <div className='hidden md:block'>
-
-</div> */}
-<HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal>
+        <div className="flex md:order-2 justify-between ml-[133px] md:ml-0 ">
+       
+       
+{/* <HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal> */}
          {/*  */}
         {/*  */}
         {/*  */}
@@ -96,6 +101,7 @@ const modalHandler = async  () => {
             label={
               <Avatar alt="User settings" img={user?.photoURL} rounded />
             }
+            
           >
             <Dropdown.Header>
               <span className="block text-sm">{user?.displayName}</span>
@@ -103,15 +109,15 @@ const modalHandler = async  () => {
             </Dropdown.Header>
             {/* <Dropdown.Item>Dashboard</Dropdown.Item> */}
             {/*  */}
-           <div>
+           {/* <div>
              <button
   // disabled={!user}
-  onClick={() => setIsModalOpen(true)}
+  // onClick={() => setIsModalOpen(true)}
   className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
 >
   Host your home
 </button>
-</div>
+</div> */}
             {/*  */}
             
             
@@ -125,13 +131,7 @@ const modalHandler = async  () => {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          {/* <Navbar.Link href="#" active>
-            Home
-          </Navbar.Link>
-          <Navbar.Link href="#">About</Navbar.Link>
-          <Navbar.Link href="#">Servicesssss</Navbar.Link>
-          <Navbar.Link href="#">Pricing</Navbar.Link>
-          <Navbar.Link href="#">Contact</Navbar.Link> */}
+          
           {navOption}
         </Navbar.Collapse>
         <ToastContainer />
