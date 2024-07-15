@@ -25,30 +25,49 @@ const CommentSec = ({house,refetch}) => {
     if (isLoading){
         return<p>loading....</p>
     }
+    const getTime = (datetime) => {
+        const date = new Date(datetime);
+        const formattedDate = date.toLocaleDateString([], {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          });
+        const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return `${formattedDate} || ${formattedTime}`
+      };
+    
     return (
-        <div>
-           <div className="font-[sans-serif] text-[#333]">
-    <div className="">
-        <h1 className="text-center font-bold text-5xl py-4">Our Platefrom Reviews</h1>
-        <div className="  bg-green-100  gap-8">
+        <>
         
             {
                 filteredReviews.map(rev => (
-                    <div key={rev._id}  className="  rounded-3xl py-8  px-2">
-                <div  className="flex items-center m-auto  p-6 bg-white shadow-[0_2px_12px_-4px_rgba(93,96,127,0.2)] rounded-xl max-w-md">
-                    <img src={rev.reviewerImage} className="w-20 h-20 rounded-full" />
-                    <div className="ml-4">
-                        <h4 className="text-lg font-extrabold italic">{rev.reviewerName}</h4>
-                        <p className="text-sm text-gray-400 mt-1 italic">{rev.description}</p>
-                    </div>
-                </div>
+            //         
+            <div key={rev._id} className="mt-8">
+          <div className="flex items-start mt-8">
+            <img
+              src={rev.reviewerImage}
+              className="w-12 h-8 rounded-[100%] border-2  border-white"
+            />
+            <div className="ml-3">
+              <h4 className="text-sm  font-bold">{rev.reviewerName}</h4>
+              <div className="mt-1">
+                <p className="text-xs  font-semibold">{getTime(rev.reviewTime)}</p>
+              </div>
+              <p className="text-xs mt-4">
+              {rev.description}
+              </p>
             </div>
+          </div>
+          {/* button cilo */}
+        </div>
                 ))
             }
-            </div>
-    </div>
-</div> 
-        </div>
+           
+  
+
+
+    
+        </>
     );
 };
 

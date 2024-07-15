@@ -25,7 +25,7 @@ const UpdatePropery = () => {
         const form=e.target;
         const min_price = parseFloat(form.min_price.value);
         const max_price = parseFloat(form.max_price.value);
-        const image = form.image.files[0]
+        const images = Array.from(form.images.files);
         const location = form.property_location.value;
         const property_title =form.property_title.value;
         const price_range = {
@@ -36,8 +36,9 @@ const UpdatePropery = () => {
         
         try{
             setloading(true);
-            const image_url = await imageUpload(image)
-            const res={image:image_url,location,property_title,price_range}
+            const image_urls = await Promise.all(images.map(image => imageUpload(image)));
+          // const result = { property_title, status, location, price_range, images: image_urls, agent, description };
+            const res={image:image_urls,location,property_title,price_range}
             console.log(res);
             const response = await axiosSecure.patch(`/house/${Data?._id}`,res);
             if (response.data.modifiedCount > 0) {

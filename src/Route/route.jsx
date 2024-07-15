@@ -163,9 +163,9 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/offerd/:id",
         element:<PrivateRoute><OfferdPage></OfferdPage></PrivateRoute>,
-        loader: ({ params }) =>
-          fetch(`https://real-estate-platform-server-xi.vercel.app/wishlist/${params.id}`),
-        //  loader:({params}) =>fetch(`http://localhost:5000/wishlist/${params.id}`)
+        // loader: ({ params }) =>
+          // fetch(`https://real-estate-platform-server-xi.vercel.app/wishlist/${params.id}`),
+         loader:({params}) =>fetch(`http://localhost:500/wishlist/${params.id}`),
 
       },
       {
@@ -177,8 +177,8 @@ export const router = createBrowserRouter([
             </AgentRoute>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`https://real-estate-platform-server-xi.vercel.app/house/${params.id}`)
-        // loader:({params}) =>fetch(`http://localhost:5000/house/${params.id}`)
+        // loader: ({ params }) => fetch(`https://real-estate-platform-server-xi.vercel.app/house/${params.id}`)
+        loader:({params}) =>fetch(`http://localhost:500/house/${params.id}`)
       },
       {
         path:"requstedproperty",
@@ -187,8 +187,8 @@ export const router = createBrowserRouter([
       {
         path:"bought/payment/:id",
         element:<PrivateRoute><PaymentSystem></PaymentSystem></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://real-estate-platform-server-xi.vercel.app/offerd/${params.id}`)
-        //  loader:({params}) =>fetch(`http://localhost:5000/offerd/${params.id}`)
+        // loader: ({ params }) => fetch(`https://real-estate-platform-server-xi.vercel.app/offerd/${params.id}`)
+         loader:({params}) =>fetch(`http://localhost:500/offerd/${params.id}`)
       },
       {
         path:"sold",

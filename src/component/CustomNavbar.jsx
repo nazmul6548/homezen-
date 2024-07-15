@@ -1,45 +1,45 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-// import HostModal from "./HostModal";
+import HostModal from "./HostModal";
 import { ToastContainer, toast } from "react-toastify";
-// import useAxiosSecure from "../hook/useAxiosSecure";
+import useAxiosSecure from "../hook/useAxiosSecure";
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 
 
 const CustomNavbar = () => {
-  // const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure()
 const {user,loader,logout} =useContext(AuthContext)
 
-// const [isModalOpen,setIsModalOpen] = useState(false)
-// const closeModal=() => {
-// setIsModalOpen(false)
-// }
-// const modalHandler = async  () => {
-//   console.log("i want");
+const [isModalOpen,setIsModalOpen] = useState(false)
+const closeModal=() => {
+setIsModalOpen(false)
+}
+const modalHandler = async  () => {
+  console.log("i want");
   
-//   try {
-//     const currentUser = {
-//       email: user?.email,
-//       role: 'guest',
-//       status: 'Requested',
-//     }
-//     const { data } = await axiosSecure.put(`/user`, currentUser)
-//     console.log(data)
-//     if (data.modifiedCount > 0) {
-//       toast.success('Success! wait for admin confirmation')
-//     } else {
-//       toast.success('Please!, Wait Admin confirmation')
-//     }
-//     closeModal();
-//   }catch (err) {
-//     console.log(err)
-//     toast.error(err.message)
-//   } finally {
-//     closeModal()
-//   }
-// }
+  try {
+    const currentUser = {
+      email: user?.email,
+      role: 'guest',
+      status: 'Requested',
+    }
+    const { data } = await axiosSecure.put(`/user`, currentUser)
+    console.log(data)
+    if (data.modifiedCount > 0) {
+      toast.success('Success! wait for admin confirmation')
+    } else {
+      toast.success('Please!, Wait Admin confirmation')
+    }
+    closeModal();
+  }catch (err) {
+    console.log(err)
+    toast.error(err.message)
+  } finally {
+    closeModal()
+  }
+}
 
 
 
@@ -82,7 +82,7 @@ const {user,loader,logout} =useContext(AuthContext)
         </div>
       </div>
        ) : (
-        <Navbar fluid rounded className="mx-auto justify- min-w-full">
+        <Navbar fluid rounded className="mx-auto fixed z-50 justify- min-w-full">
         <Navbar.Brand >
           <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png" className="mr-3  h-6 sm:h-9" alt="Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
@@ -90,7 +90,7 @@ const {user,loader,logout} =useContext(AuthContext)
         <div className="flex md:order-2 justify-between ml-[133px] md:ml-0 ">
        
        
-{/* <HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal> */}
+<HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal>
          {/*  */}
         {/*  */}
         {/*  */}
@@ -109,15 +109,15 @@ const {user,loader,logout} =useContext(AuthContext)
             </Dropdown.Header>
             {/* <Dropdown.Item>Dashboard</Dropdown.Item> */}
             {/*  */}
-           {/* <div>
+           <div>
              <button
-  // disabled={!user}
-  // onClick={() => setIsModalOpen(true)}
+  disabled={!user}
+  onClick={() => setIsModalOpen(true)}
   className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
 >
   Host your home
 </button>
-</div> */}
+</div>
             {/*  */}
             
             

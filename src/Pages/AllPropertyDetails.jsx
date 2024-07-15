@@ -126,25 +126,79 @@ function onCloseModal() {
     
       // console.log(res);
     }
-  return <div>
-    <section>
-	<div className="bg-green-100">
-		<div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50">
-			<h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">{house.property_title}</h1>
-			<p className="mt-6 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">{house.description}</p>
-            <p className="  text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">Price Range: max: {house?.price_range.max} || min: {house?.price_range.min}  </p>
-            <div>
-              <p className="font-bold pb-3">Agent : {house.agent.name}</p>
-            </div>
-			<div className="flex flex-wrap justify-center">
-				<button onClick={()=>addWishlist(house)} type="button" className="px-8 py-3 border m-2 text-lg font-semibold rounded bg-green-400 dark:bg-gray-100 dark:text-gray-900">Add Wishlist</button>
-				
-				
-				{/*  */}
-				{/*  */}
-				{/*  */}
-        <button className="px-8 py-3 m-2 text-lg font-semibold border bg-green-400 rounded dark:border-gray-300 dark:text-gray-50" onClick={() => setOpenModal(true)}>Add Review</button>
-      <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+  return <div className="flex justify-center min-h-screen pt-12">
+   
+   <div className="font-sans">
+  <div className="p-4 lg:max-w-7xl max-w-xl max-lg:mx-auto">
+    <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
+      <div className="min-h-[500px] lg:col-span-3 bg-green-100 rounded-lg w-full lg:sticky top-0 text-center p-6">
+        {/* <img src={house.image} 
+        alt="Product" className="w-5/5 rounded object-cover mx-auto py-6" /> */}
+ {house.images && house.images[0] && (
+    <img src={house.images[4]}
+    alt="Product"
+    className="w-5/5 rounded object-cover mx-auto py-6 " />
+  )}
+        <hr className="border-white border my-6" />
+
+        <div className="flex flex-wrap gap-x-4 gap-y-6 justify-center mx-auto">
+          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
+          {house.images && house.images[0] && (
+    <img src={house.images[1]}
+    alt="Product"
+    className="w-full h-full cursor-pointer object-cover" />
+  )}
+          </div>
+          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
+          {house.images && house.images[0] && (
+    <img src={house.images[2]}
+    alt="Product"
+    className="w-full h-full cursor-pointer object-cover" />
+  )}
+          </div>
+          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
+          {house.images && house.images[0] && (
+    <img src={house.images[3]}
+    alt="Product"
+    className="w-full h-full cursor-pointer object-cover" />
+  )}
+          </div>
+          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
+          {house.images && house.images[0] && (
+    <img src={house.images[0]}
+    alt="Product"
+    className="w-full h-full cursor-pointer object-cover" />
+  )}
+          </div>
+        </div>
+      </div>
+
+      <div className="lg:col-span-2">
+        <h2 className="text-2xl font-bold text-gray-800">{house.property_title}</h2>
+        <div className="flex flex-wrap gap-4 mt-4">
+          <p className="text-gray-800 text-xl font-bold">${house.price_range.min}-{house.price_range.max}</p>
+          
+        </div>
+
+        <div className="flex space-x-2 mt-4"></div>
+
+        <div className="mt-8">
+          <h3 className="text-xl font-bold text-gray-800">About the Property</h3>
+          <ul className="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-800">
+            <li>{house.description}</li>
+          </ul>
+        </div>
+
+        <button
+        onClick={()=>addWishlist(house)}
+          type="button"
+          className="w-full mt-8 px-6 py-3 bg-green-200 hover:bg-green-300 text-black text-sm font-semibold rounded-md"
+        >
+          Add to wishlist
+        </button>
+{/*  */}
+<button className="w-full mt-8 px-4 py-2.5 bg-transparent border border-green-400 text-gray-800 font-semibold rounded-lg" onClick={() => setOpenModal(true)}>Add Review</button>
+<Modal show={openModal} size="md" onClose={onCloseModal} popup>
         <Modal.Header />
         <Modal.Body>
           <div className="space-y-6">
@@ -170,21 +224,17 @@ function onCloseModal() {
           </div>
         </Modal.Body>
       </Modal>
-				{/*  */}
-				{/*  */}
-				{/*  */}
-			</div>
-		</div>
-	</div>
-	<img src={house.image} alt="" className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40" />
-</section>
-
+      <CommentSec house={house} refetch={refetch}></CommentSec>
+      </div>
+    </div>
+  </div>
+</div>
 {/*  */}
 {/*  */}
 
 {/*  */}
 {/*  */}
-<CommentSec house={house} refetch={refetch}></CommentSec>
+
   </div>;
 
 };

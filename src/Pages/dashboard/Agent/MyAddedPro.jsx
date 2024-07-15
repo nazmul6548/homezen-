@@ -70,14 +70,24 @@ const handleDelete = (data) => {
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
      
+     
+     
      {
         houses.map(house => (
             <div key={house._id} className="flex max-lg:flex-col bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] hover:scale-105 transition-all duration-300">
-            <img
-              src={house.image}
+               {/* <img
+              src={house.images[4]}
               alt="Blog Post 1"
               className="lg:w-2/5 min-h-[250px] h-[350px] object-cover"
-            />
+            /> */}
+           {house.images && house.images[0] && (
+                  <img
+                    src={house.images[4]}
+                    alt="House Image 1"
+                    className="lg:w-3/6 min-h-[250px]  object-cover"
+                  />
+                )}
+           
             <div className="p-6 lg:w-3/5">
               <h3 className="text-xl font-bold text-[#333]">{house.property_title}</h3>
               <span className="text-sm block text-gray-400 mt-2">{house.location}</span>

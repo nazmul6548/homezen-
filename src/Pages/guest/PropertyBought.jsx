@@ -47,7 +47,12 @@ if (isLoading) {
                   </svg>
                 </div>
                 <div className="relative">
-                <img src={offer?.offerProperty?.productlist.image} className="w-full h-[300px] my-6" />
+                {/* <img src={offer?.offerProperty?.productlist.image} className="w-full h-[300px] my-6" /> */}
+                {offer?.offerProperty?.productlist?.images && offer?.offerProperty?.productlist?.images[0] && (
+    <img src={offer?.offerProperty?.productlist?.images[0]}
+    alt="Product"
+    className="w-full h-[300px] my-6 object-cover"  />
+  )}
                 <span className="absolute bottom-0 right-0 text-white font-bold  bg-black px-2 py-1 opacity-60 rounded-xl">{offer?.offerProperty?.productlist.status}</span>
                 </div>
                 <div className="px-6">

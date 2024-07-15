@@ -62,9 +62,11 @@ console.log(user);
     };
 
     // 
-    return (
-
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100">
+    return (<>
+      <div className="bg-green-100 pt-6">
+        <h1 className="text-center font-bold text-4xl ">My All Reviews</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
       {review.length > 0 ? (
         review.map(review => (
           <div key={review._id} className="review">
@@ -87,6 +89,8 @@ console.log(user);
         <p>No reviews found for this user.</p>
       )}
       </div>
+      </div>
+      </>
     )
 };
 

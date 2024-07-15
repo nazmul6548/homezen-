@@ -42,17 +42,20 @@ const {mutateAsync} = useMutation({
             min: min_price,
             max: max_price
           };
+         
         
-          
-        const image = form.image.files[0];
+          const images = Array.from(form.images.files);
+       
         const agent= {
             name:user?.displayName,
             image:user?.photoURL,
             email:user?.email
         }
         try{
-            const image_url = await imageUpload(image)
-            const result ={property_title,status,location,price_range,image:image_url,agent,description}
+          const image_urls = await Promise.all(images.map(image => imageUpload(image)));
+          const result = { property_title, status, location, price_range, images: image_urls, agent, description };
+            // const image_url = await imageUpload(image)
+            // const result ={property_title,status,location,price_range,image:image_url,agent,description}
             // console.log(result);
             await mutateAsync(result)
         }catch (error) {
@@ -65,17 +68,17 @@ const {mutateAsync} = useMutation({
             //   });
             setloading(false)
         }
-        const image_url = await imageUpload(image)
+        const image_url = await imageUpload(images)
         console.log(image_url);
         
         // console.log(result);
     }
     return (
-        <div>
+        <div >
             
             <div>
             <div
-  className="grid lg:grid-cols-3 items-center max-lg:justify-center h-full py-6 px-16 max-sm:px-4 bg-green-100 font-[sans-serif]"
+  className="min-h-screen grid lg:grid-cols-3 items-center max-lg:justify-center h-full py-6 px-16 max-sm:px-4 bg-green-100 font-[sans-serif]"
 >
   <div className="max-w-lg max-lg:mx-auto max-lg:text-center max-lg:mb-6">
     <h2 className="text-4xl font-extrabold text-[#333]">Get In Touch</h2>

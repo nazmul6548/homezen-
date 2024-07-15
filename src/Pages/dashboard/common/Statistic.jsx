@@ -3,6 +3,7 @@
 const Statistic = () => {
     return (
         <div className="bg-green-100 min-h-screen">
+          
             
             <div>
             <div className=" px-4 py-10 font-[sans-serif]  text-[#333]">

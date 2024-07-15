@@ -146,7 +146,7 @@ const OfferdPage = () => {
         {/* <input type="submit" value="OFFER" /> */}
          <input type="submit"
          value="Submit"
-         className="text-white w-full relative bg-green-600 hover:bg-blue-600 font-semibold rounded text-sm px-6 py-3"
+         className="text-black w-full relative bg-green-200 hover:bg-green-400 font-semibold rounded text-sm px-6 py-3"
          />
         
       </div>

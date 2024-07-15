@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className='bg-gradient-to-r from-slate-300 via-slate-200 to-slate-300 text-white flex justify-between md:hidden'>
+      <div className=' bg-gradient-to-r from-slate-300 via-slate-200 to-slate-300 text-white flex justify-between md:hidden '>
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
             <Link to='/'>
@@ -61,7 +61,7 @@ const Sidebar = () => {
       <div
         className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gradient-to-r from-green-100 via-green-200 to-green-100 text-white w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && '-translate-x-full'
-        }  md:translate-x-0  transition duration-200 ease-in-out`}
+        }  md:translate-x-0  transition duration-200 ease-in-out h-[100vh]`}
       >
         <div>
           <div>
@@ -81,7 +81,11 @@ const Sidebar = () => {
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
             {/* Conditional toggle button here.. */}
-
+            <div className='flex justify-start ml-4 md:hidden '>
+          <img src="https://themesflat.co/html/homzen/images/logo/logo@2x.png"  alt='logo'
+                  width='100'
+                  height='100' />
+          </div>
             {/*  Menu Items */}
             <nav>
              {

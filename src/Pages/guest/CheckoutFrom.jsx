@@ -73,7 +73,7 @@ const CheckoutFrom = ({data}) => {
         Swal.fire({
           title: "Success",
           text: "Payment Successfully Done",
-          imageUrl: offerProperty?.productlist?.image,
+          // imageUrl: ,
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: "Custom image"
@@ -95,7 +95,7 @@ const CheckoutFrom = ({data}) => {
               Swal.fire({
                   position: "top-end",
                   icon: "success",
-                  title: "Thank you for the taka paisa",
+                  title: "Thank you for the taka paisi",
                   showConfirmButton: false,
                   timer: 1500
               });

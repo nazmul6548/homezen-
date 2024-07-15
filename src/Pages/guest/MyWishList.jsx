@@ -73,10 +73,15 @@ const MyWishList = () => {
       {
         wishlist.map(wish=>(
             <div key={wish._id} className="mb-16  bg-white grid sm:grid-cols-2 items-center shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-full max-w-xl rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-10">
-        <img
+        {/* <img
           src={wish?.productlist?.image}
           className="w-full h-[300px] md:h-full object-cover"
-        />
+        /> */}
+            {wish?.productlist?.images && wish?.productlist?.images[0] && (
+    <img src={wish?.productlist?.images[0]}
+    alt="Product"
+    className="w-full h-[300px] md:h-full object-cover" />
+  )}
         <div className="px-4 py-6">
           <h3 className="text-xl font-semibold">{wish?.productlist?.property_title}</h3>
           <p className="mt-2 text-sm text-gray-400">
@@ -113,8 +118,8 @@ const MyWishList = () => {
             </svg>
           </div>
           <div className="flex justify-between mt-3">
-         <Link  to={`/dashboard/offerd/${wish?._id}`}> <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Make Offer</button></Link>
-          <button onClick={()=>handleDelete(wish._id)} className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-blue-700 transition-all duration-300">Remove</button>
+         <Link  to={`/dashboard/offerd/${wish?._id}`}> <button className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-black transition-all duration-300">Make Offer</button></Link>
+          <button onClick={()=>handleDelete(wish._id)} className="px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-green-400 hover:bg-transparent text-white hover:text-black transition-all duration-300">Remove</button>
           </div>
         </div>
       </div>

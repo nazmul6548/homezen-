@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 const AdvertismentSec = () => {
 
-
-
+  
     const axiosCommon = useAxiosCommon();
     // const [search, setSearch] = useState("");
     // const [sortCriteria, setSortCriteria] = useState("");
@@ -23,6 +22,8 @@ const AdvertismentSec = () => {
     // console.log(houses);
     if (isLoading) {
       return <p>loading....</p>;
+     
+    
     }
     return (
        <div className="mt-20">
@@ -34,10 +35,20 @@ const AdvertismentSec = () => {
            {
             houses.map(house=>(
                 <div key={house._id}
-                className="bg-white shadow-[0_2px_15px_-6px_rgba(0,0,0,0.2)] w-full max-w-sm rounded-2xl font-[sans-serif] overflow-hidden mx-auto mt-4"
+                className="bg-white shadow-[0_2px_15px_-6px_rgba(0,0,0,0.4)] w-full max-w-sm rounded-2xl font-[sans-serif] overflow-hidden mx-auto mt-4"
               >
-                <img src={house.image} className="w-full h-[250px] rounded-2xl" />
+                {/* <img src={house.image} className="w-full h-[250px] rounded-2xl" /> */}
+            
+            {house.images && house.images[0] && (
+    <img src={house.images[0]}
+    alt="Product"
+    className="w-full h-[250px] rounded-2xl transform hover:scale-110 transition duration-200"
+  
+    />
+  )}
+            
                 <div className="p-6">
+               
                   <h3 className="text-2xl text-[#333] font-extrabold"> {house.property_title} </h3>
                   <p className="text-sm text-[#333] mt-3">{house.description.slice(0, 100)}...</p>
                   <div className="mt-8 flex items-center">

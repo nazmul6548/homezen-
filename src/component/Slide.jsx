@@ -51,6 +51,7 @@ const Slide = () => {
             <div className="slide slide2 flex flex-col">
               <div>
             {/*  */}
+           
             <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
     <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">HOLLYWOOD GLAM DESIGN</h2>
