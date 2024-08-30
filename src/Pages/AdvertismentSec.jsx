@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosCommon from "../hook/useAxiosCommon";
 import { Link } from "react-router-dom";
-
-
+// import { motion } from 'framer-motion';
+import { Fade } from "react-awesome-reveal";
 const AdvertismentSec = () => {
 
   
@@ -26,15 +26,17 @@ const AdvertismentSec = () => {
     
     }
     return (
-       <div className="mt-20">
+      
+        <div className="mt-20">
         <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-5xl font-extrabold p-3">Find Your Real Estate <span className="text-[#a8181f]">Property</span></h2>
               <p className="text-sm max-w-2xl mx-auto mt-5 leading-relaxed">Discover your dream home or investment property with our comprehensive real estate search platform. Whether you're looking for a cozy apartment in the city, a spacious family home in the suburbs, or a lucrative commercial property</p>
           </div>
          <div className="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-10 mt-10">
            {
-            houses.map(house=>(
-                <div key={house._id}
+             houses.map(house=>(
+              <Fade cascade key={house._id}>
+              <div 
                 className="bg-white shadow-[0_2px_15px_-6px_rgba(0,0,0,0.4)] w-full max-w-sm rounded-2xl font-[sans-serif] overflow-hidden mx-auto mt-4"
               >
                 {/* <img src={house.image} className="w-full h-[250px] rounded-2xl" /> */}
@@ -69,11 +71,16 @@ const AdvertismentSec = () => {
                   </Link>
                   </div>
                 </div>
+                {/*  */}
               </div>
+                
+                </Fade>
             ))
            }
         </div>
        </div>
+      
+      
     );
 };
 

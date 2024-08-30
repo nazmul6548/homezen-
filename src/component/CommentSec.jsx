@@ -44,16 +44,21 @@ const CommentSec = ({house,refetch}) => {
             //         
             <div key={rev._id} className="mt-8">
           <div className="flex items-start mt-8">
-            <img
-              src={rev.reviewerImage}
-              className="w-12 h-8 rounded-[100%] border-2  border-white"
-            />
+          <div className="border-white">
+  <div className="w-8 h-8 rounded-full border-2 overflow-hidden">
+    <img
+      src={rev.reviewerImage}
+      className="w-full h-full object-cover"
+      alt="Reviewer"
+    />
+  </div>
+</div>
             <div className="ml-3">
-              <h4 className="text-sm  font-bold">{rev.reviewerName}</h4>
+              <h4 className="text-sm   font-bold">{rev.reviewerName}</h4>
               <div className="mt-1">
-                <p className="text-xs  font-semibold">{getTime(rev.reviewTime)}</p>
+                <p className="text-xs text-[#84e1bc]  font-semibold">{getTime(rev.reviewTime)}</p>
               </div>
-              <p className="text-xs mt-4">
+              <p className="text-xs text-gray-500 mt-4">
               {rev.description}
               </p>
             </div>

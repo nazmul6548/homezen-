@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 // import useAxiosPublic from "../axios/useAxiosPublic";
 import CommentSec from "../component/CommentSec";
 import useAxiosSecure from "../hook/useAxiosSecure";
+import AlldetailsSlider from "../component/AlldetailsSlider";
 
 const AllPropertyDetails = () => {
   
@@ -131,52 +132,15 @@ function onCloseModal() {
    <div className="font-sans">
   <div className="p-4 lg:max-w-7xl max-w-xl max-lg:mx-auto">
     <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
-      <div className="min-h-[500px] lg:col-span-3 bg-green-100 rounded-lg w-full lg:sticky top-0 text-center p-6">
-        {/* <img src={house.image} 
-        alt="Product" className="w-5/5 rounded object-cover mx-auto py-6" /> */}
- {house.images && house.images[0] && (
-    <img src={house.images[4]}
-    alt="Product"
-    className="w-5/5 rounded object-cover mx-auto py-6 " />
-  )}
-        <hr className="border-white border my-6" />
-
-        <div className="flex flex-wrap gap-x-4 gap-y-6 justify-center mx-auto">
-          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
-          {house.images && house.images[0] && (
-    <img src={house.images[1]}
-    alt="Product"
-    className="w-full h-full cursor-pointer object-cover" />
-  )}
-          </div>
-          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
-          {house.images && house.images[0] && (
-    <img src={house.images[2]}
-    alt="Product"
-    className="w-full h-full cursor-pointer object-cover" />
-  )}
-          </div>
-          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
-          {house.images && house.images[0] && (
-    <img src={house.images[3]}
-    alt="Product"
-    className="w-full h-full cursor-pointer object-cover" />
-  )}
-          </div>
-          <div className="w-36 h-36 max-lg:w-16 max-lg:h-16 bg-green-300 p-3 rounded-lg">
-          {house.images && house.images[0] && (
-    <img src={house.images[0]}
-    alt="Product"
-    className="w-full h-full cursor-pointer object-cover" />
-  )}
-          </div>
-        </div>
+      
+    <div className="min-h-[500px] lg:col-span-3 bg-green-100 rounded-lg w-full lg:sticky top-0 text-center p-6">
+      <AlldetailsSlider></AlldetailsSlider>
+        
       </div>
-
       <div className="lg:col-span-2">
         <h2 className="text-2xl font-bold text-gray-800">{house.property_title}</h2>
         <div className="flex flex-wrap gap-4 mt-4">
-          <p className="text-gray-800 text-xl font-bold">${house.price_range.min}-{house.price_range.max}</p>
+          <p className="text-gray-400 text-xl font-bold">${house.price_range.min}-{house.price_range.max}</p>
           
         </div>
 
@@ -184,7 +148,7 @@ function onCloseModal() {
 
         <div className="mt-8">
           <h3 className="text-xl font-bold text-gray-800">About the Property</h3>
-          <ul className="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-800">
+          <ul className="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-500">
             <li>{house.description}</li>
           </ul>
         </div>
@@ -212,7 +176,7 @@ function onCloseModal() {
 
 
 <div className="w-full mt-4">
-              <input type="submit" disabled={buttonDisabled} value="Submit" className="px-5 py-2.5 rounded-lg text-white text-sm tracking-wider font-medium border border-current outline-none bg-gradient-to-tr hover:bg-gradient-to-tl from-purple-700 to-purple-300" />
+              <input type="submit" disabled={buttonDisabled} value="Submit" className="px-5 py-2.5 rounded-lg text-white text-sm tracking-wider font-medium border border-current outline-none bg-gradient-to-tr hover:bg-gradient-to-tl from-[#84e1bc] to-green-400" />
             </div>
             </form>
            

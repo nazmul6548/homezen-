@@ -58,11 +58,11 @@ if (isLoading) {
                 <div className="px-6">
                   <p className="text-sm text-gray-500">{offer?.offerProperty?.productlist.description}</p>
                   <p className="text-sm text-gray-700 mt-2">{offer?.offerProperty?.productlist.location}</p>
-                  <h6 className="text-sm text-gray-700 mt-2">{offer?.offerProperty?.productlist?.agent?.name}</h6>
+                  <h6 className="text-sm text-gray-700 font-bold mt-2">{offer?.offerProperty?.productlist?.agent?.name}</h6>
                   <div className="mt-10 flex items-center flex-wrap gap-4">
                     <h3 className="text-xl text-[#333] font-bold flex-1">${offer?.offeerAmount}</h3>
                     <Link to={`/dashboard/bought/payment/${offer._id}`}>
-                    <button type="button" className="px-6 py-2.5 rounded text-[#333] text-sm tracking-wider font-semibold border-2 border-[#333] hover:bg-gray-50 outline-none">Pay now</button>
+                    <button type="button" className="px-6 py-2.5 rounded text-[#333] text-sm tracking-wider font-semibold border-2  bg-green-400  hover:bg-gray-50 outline-none">Pay now</button>
                     </Link>
                   </div>
                 </div>

@@ -1,3 +1,9 @@
+import Slide from "../Slide";
+import OneSectionSlide from "./OneSectionSlide";
+
+
+
+
 
 
 const OneSection = () => {
@@ -22,6 +28,9 @@ const OneSection = () => {
       </div>
       <div>
         <img src="https://i.ibb.co/zNLDdhb/pexels-followingnyc-16655113.jpg" className="shrink-0 w-full h-full rounded-md object-contain" alt="Readymade UI Banner" />
+        <div className="">
+        
+        </div>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import './slide.css'
+
 // import 'animate.css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/effect-cube';
@@ -13,7 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Slide = () => {
     
     return (
-        <div className="">
+        <div className="pt-10 md:pt-0">
         <Swiper
           navigation={true}
           pagination={{ clickable: true }}
@@ -24,8 +25,8 @@ const Slide = () => {
          
         >
           <SwiperSlide>
-            <div className="slide slide1 flex flex-col fixed min-h-full">
-           {/*  */}
+            <div className="slide slide1 flex flex-col">
+           
            <div className=" text-white p-8 font-[sans-serif]">
   <div className="max-w-xl mx-auto text-center">
     <h2 className="text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-green-400 after:left-0 after:right-0 after:mx-auto after:rounded-full">MINIMALIST DESIGN</h2>
@@ -40,7 +41,7 @@ const Slide = () => {
     </div>
   </div>
 </div>
-           {/*  */}
+           
               <div className="mt-6">
                
               </div>

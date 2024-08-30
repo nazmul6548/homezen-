@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosCommon from "../hook/useAxiosCommon";
+import ReviewSlide from "./ReviewSlide";
 
 
 const LatestReviews = () => {
@@ -8,7 +9,7 @@ const LatestReviews = () => {
     const {data:reviews=[],isLoading}=useQuery({
         queryKey:["reviews"],
         queryFn:async()=>{
-            const {data} = await axiosCommon.get("/review")
+            const {data} = await axiosCommon.get("/reviews")
             return data;
 
 
@@ -28,8 +29,8 @@ const LatestReviews = () => {
               <p className="text-sm max-w-2xl mx-auto mt-2 leading-relaxed">Credibly expedite process-centric methodologies and customer directed customer service. Competently scale e-business partnerships rather than</p>
           </div>
          
-          <div className="grid md:grid-cols-3 md:gap-6 max-md:gap-10 max-md:justify-center text-center mt-12">
-              {
+          {/* <div className="grid md:grid-cols-3 md:gap-6 max-md:gap-10 max-md:justify-center text-center mt-12"> */}
+              {/* {
                 reviews.map(revie=>(
                   <div key={revie._id} className="max-w-[350px] h-auto p-4 rounded-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)]">
                   <div className="flex flex-col items-center">
@@ -66,9 +67,12 @@ const LatestReviews = () => {
                   </div>
               </div>
                 ))
-              }
+              } */}
+              {/*  */}
+              <ReviewSlide></ReviewSlide>
+              {/*  */}
              
-          </div>
+          {/* </div> */}
       </div>
       
   </div>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 // import useAxiosPublic from "../../axios/useAxiosPublic";
 // import { axiosSecure } from "../../hook/useAxiosSecure";
-
+import { Fade } from "react-awesome-reveal";
 const MyWishList = () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
@@ -72,7 +72,8 @@ const MyWishList = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 bg-green-100 ">
       {
         wishlist.map(wish=>(
-            <div key={wish._id} className="mb-16  bg-white grid sm:grid-cols-2 items-center shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-full max-w-xl rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-10">
+          <Fade cascade key={wish._id}>
+            <div  className="mb-16  bg-white grid sm:grid-cols-2 items-center shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-full max-w-xl rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-10">
         {/* <img
           src={wish?.productlist?.image}
           className="w-full h-[300px] md:h-full object-cover"
@@ -123,6 +124,7 @@ const MyWishList = () => {
           </div>
         </div>
       </div>
+      </Fade>
         ))
       }
     </div>
